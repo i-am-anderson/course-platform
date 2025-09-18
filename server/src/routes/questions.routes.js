@@ -1,6 +1,9 @@
 import express from "express";
 
-import { searchQuestionById, verifyAnswerById } from "../services/questions.service.js";
+import {
+  searchQuestionById,
+  verifyAnswerById,
+} from "../services/questions.service.js";
 
 const router = express.Router();
 
@@ -19,14 +22,12 @@ router.get("/api/v1/question/:id", async (req, res) => {
   }
 });
 
-router.get("/api/v1/question/:questionId/answer/:answerId", async (req, res) => {
+router.get("/api/v1/verify/question/:questionId", async (req, res) => {
   const questionId = req.params.questionId;
-  const answerId = req.params.answerId;
 
   try {
     const result = await verifyAnswerById({
       questionId,
-      answerId,
     });
 
     res.status(200).send(result);

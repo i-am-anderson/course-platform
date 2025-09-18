@@ -1,4 +1,4 @@
-import React from "react";
+
 import { NavLink } from "react-router-dom";
 
 const Sidenav = () => {
@@ -10,7 +10,7 @@ const Sidenav = () => {
             <NavLink to="/">Home</NavLink>
           </li>
           <li>
-            <NavLink to="/contact">Contact</NavLink>
+            <NavLink to="/exam">Exam</NavLink>
           </li>
         </ul>
       </nav>

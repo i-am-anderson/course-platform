@@ -17,37 +17,31 @@ export async function searchQuestionById({ questionId }) {
       throw new Error("Nada encontrado no DB!");
     }
 
-    results = {
+    const res = {
       questionId: questionId,
       question: results[0].question,
       type: results[0].type,
       options,
     };
 
-    return results;
+    return res;
   } catch (err) {
     console.error("Error: ", err.message);
     throw new Error("Erro ao buscar questão.");
   }
 }
 
-export async function verifyAnswerById({ questionId, answerId }) {
+export async function verifyAnswerById({ questionId }) {
   try {
     const db = await openDb();
 
     const query =
-      "SELECT * FROM options WHERE question_id = ? AND id = ? LIMIT 1";
-    let results = await db.all(query, [questionId, answerId]);
+      "SELECT * FROM options WHERE question_id = ? AND options.is_correct = 1";
+    let results = await db.all(query, [questionId]);
 
     if (results.length === 0) {
       throw new Error("Nada encontrado no DB!");
     }
-
-    results = {
-      answerId: answerId,
-      answer: results[0].text,
-      isCorrect: !!results[0].is_correct,
-    };
 
     return results;
   } catch (err) {

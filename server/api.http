@@ -3,4 +3,4 @@ GET http://localhost:5000/api/v1/question/1
 
 
 ### Verificar resposta
-GET http://localhost:5000/api/v1/question/1/answer/1
+GET http://localhost:5000/api/v1/verify/question/1

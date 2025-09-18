@@ -1,7 +1,7 @@
 declare global {
   namespace NodeJS {
     interface ProcessEnv {
-      VITE_ORIGIN: string;
+      VITE_API_URL: string;
     }
   }
 }

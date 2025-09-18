@@ -4,10 +4,10 @@
   --color-3: #d1d5db;
 }
 
-body.dark {
-  --color-1: #000;
-  --color-2: #000;
-  --color-3: #000;
+html[data-theme="dark"] {
+  --color-1: #d1d5db;
+  --color-2: #34d399;
+  --color-3: #1e3a8a;
 }
 
 $light: 300;
@@ -43,8 +43,8 @@ body {
 .box {
   padding: 1.25rem;
   border-radius: 1.25rem;
-  background: var(--color-3);
-  outline: 2px solid var(--color-1);
+  background: var(--color-1);
+  outline: 2px solid var(--color-3);
 }
 
 button {
@@ -55,7 +55,7 @@ button {
 }
 
 button:disabled {
-  outline: 2px solid var(--color-1);
+  outline: 2px solid var(--color-3);
   border-radius: 0.75rem;
 }
 

@@ -1,0 +1,35 @@
+.toggleContainer {
+  display: block;
+  width: 100px;
+  height: 25px;
+
+  border: 1px solid #000;
+}
+
+.toggleLabel {
+  cursor: pointer;
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.toggleInput {
+  appearance: none;
+}
+
+.toggleFakeButton {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 20px;
+  height: 20px;
+  background-color: red;
+  font-size: 0;
+  transition: 0.3s all;
+}
+
+.toggleInput:checked + .toggleFakeButton {
+  left: 80px;
+}
