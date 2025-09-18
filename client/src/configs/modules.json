@@ -1,0 +1,73 @@
+[
+  {
+    "module": "Módulo 1 - Primeiros passos",
+    "link": "/modulo-1-primeiros-passos",
+    "topics": [
+      {
+        "topic": "1.1 Apresentação",
+        "link": "/modulo-1-primeiros-passos#/1-1-apresentacao"
+      },
+      {
+        "topic": "1.2 O que é o Spotify",
+        "link": "/modulo-1-primeiros-passos#/1-2-o-que-e-o-spotify"
+      },
+      {
+        "topic": "1.3 Resumo: Introdução",
+        "link": "/modulo-1-primeiros-passos#/1-3-resumo-introducao"
+      }
+    ]
+  },
+
+  {
+    "module": "Módulo 2 - Configurações iniciais",
+    "link": "/modulo-2-configuracoes-iniciais",
+    "topics": [
+      {
+        "topic": "2.1 Apresentação",
+        "link": "/modulo-2-configuracoes-iniciais#/2-1-apresentacao"
+      },
+      {
+        "topic": "2.2 Configurações do usuário",
+        "link": "/modulo-2-configuracoes-iniciais#/2-2-configuracao-do-usuario"
+      },
+      {
+        "topic": "2.3 Preferências",
+        "link": "/modulo-2-configuracoes-iniciais#/2-3-preferencias"
+      },
+      {
+        "topic": "2.4 Resumo: Configurações",
+        "link": "/modulo-2-configuracoes-iniciais#/2-4-resumo-configuracoes"
+      }
+    ]
+  },
+
+  {
+    "module": "Módulo 3 - Playlist",
+    "link": "/modulo-3-playlist",
+    "topics": [
+      {
+        "topic": "3.1 Apresentação",
+        "link": "/modulo-3-playlist#/3-1-apresentacao"
+      },
+      {
+        "topic": "3.2 Playlist",
+        "link": "/modulo-3-playlist#/3-2-playlist"
+      },
+      {
+        "topic": "3.4 Resumo: Playlist",
+        "link": "/modulo-3-playlist#/3-3-resumo-playlist"
+      }
+    ]
+  },
+
+  {
+    "module": "Checkpoint - Exame",
+    "link": "/checkpoint-exame",
+    "topics": [
+      {
+        "topic": "Checkpoint - Exame",
+        "link": "/checkpoint-exame"
+      }
+    ]
+  }
+]
