@@ -1,4 +1,4 @@
-import useThemeContext from "../../contexts/ThemeContext";
+import useThemeContext from "@/src/contexts/ThemeContext";
 import styles from "./styles.module.scss";
 
 const ToggleTheme = () => {

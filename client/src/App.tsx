@@ -9,15 +9,17 @@ import Exam from "./pages/Exam";
 function App() {
   return (
     <BrowserRouter>
-      <main className="container">
-        <Sidenav />
-        <section>
-          <Header />
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/exam" element={<Exam />} />
-            <Route path="/contact" element={<Contact />} />
-          </Routes>
+      <main>
+        <Header />
+        <section className="section">
+          <Sidenav />
+          <div className="container">
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/exam" element={<Exam />} />
+              <Route path="/contact" element={<Contact />} />
+            </Routes>
+          </div>
         </section>
       </main>
     </BrowserRouter>

@@ -1,6 +1,7 @@
-import { useEffect, useState, type FormEvent } from "react";
-import useFetch from "../../hooks/useFetch";
-import type { DataProps } from "../../../types/data";
+import { useState, type FormEvent } from "react";
+import useFetch from "@/src/hooks/useFetch";
+import type { DataProps } from "@/types/data";
+import styles from "./styles.module.scss"
 
 const Exam = () => {
   const qtyAttempt = 3;
@@ -19,30 +20,20 @@ const Exam = () => {
       headers: { "Content-Type": "application/json" },
     });
 
-  useEffect(() => {
-    if (loading || error || !data) return;
-
-    console.log("Hello World!", data);
-  }, [data, error, loading]);
-
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
-    const questionId = data?.questionId;
     const inputs = Array.from(
       event.currentTarget.querySelectorAll<HTMLInputElement>(
         'input[name="options"]:checked',
       ),
     ); // Ajuste de tipagem por IA
-    const answerIds = inputs.map((input) => +input.id);
 
-    //
-    const req = await fetch(`${url}/api/v1/verify/question/${questionId}`);
-    const res = await req.json();
-    const template = res.map(({ id }: { id: number }) => id);
+    const answerIds = inputs.map((input) => +input.id);
+    const template = data?.options.filter(({ is_correct }) => is_correct === 1).map(({id})=>+id)
 
     if (
-      template.length === answerIds.length &&
+      template?.length === answerIds.length &&
       answerIds.every((id) => template.includes(id))
     ) {
       return setCorrect(true);
@@ -57,7 +48,7 @@ const Exam = () => {
   if (error) return <></>;
 
   return (
-    <div>
+    <div className={`${styles.exam}`}>
       <h1>Exam</h1>
       <p>Tentativa: {attempt}</p>
       {correct !== null && (
@@ -67,15 +58,15 @@ const Exam = () => {
         <form onSubmit={handleSubmit}>
           <h2>{data?.question}</h2>
           <ul>
-            {data?.options.map(({ answerId, answer }) => (
-              <li key={answerId}>
+            {data?.options.map(({ id, text }) => (
+              <li key={id}>
                 <input
                   type={data?.type === "multiple" ? "checkbox" : "radio"}
                   name="options"
-                  id={answerId.toString()}
-                  value={answer}
+                  id={id.toString()}
+                  value={text}
                 />
-                <label htmlFor={answerId.toString()}>{answer}</label>
+                <label htmlFor={id.toString()}>{text}</label>
               </li>
             ))}
           </ul>

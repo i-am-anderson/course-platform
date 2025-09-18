@@ -8,9 +8,10 @@ export async function searchQuestionById({ questionId }) {
       "SELECT * FROM questions LEFT JOIN options ON questions.id = options.question_id WHERE questions.id = ? ";
     let results = await db.all(query, [questionId]);
 
-    const options = results.map(({ id, text }) => ({
-      answerId: id,
-      answer: text,
+    const options = results.map(({ id, text, is_correct }) => ({
+      id,
+      text,
+      is_correct
     }));
 
     if (results.length === 0) {
@@ -18,7 +19,7 @@ export async function searchQuestionById({ questionId }) {
     }
 
     const res = {
-      questionId: questionId,
+      question_id: results[0].question_id,
       question: results[0].question,
       type: results[0].type,
       options,

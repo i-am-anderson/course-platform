@@ -1,6 +1,6 @@
 
 import { createContext, type ReactNode, useEffect, useState } from "react";
-import type {ThemeContextProps, ThemeProps} from "../../../types/theme"
+import type {ThemeContextProps, ThemeProps} from "@/types/theme"
 
 // eslint-disable-next-line react-refresh/only-export-components
 export const ThemeContext = createContext<ThemeContextProps | null>(null);

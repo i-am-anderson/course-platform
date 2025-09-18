@@ -1,18 +1,12 @@
-export type OptionsProps = {
-  answerId: number;
-  answer: string;
-};
-
 export type DataProps = {
-  questionId: number;
+  question_id: number;
   question: string;
   type: "multiple" | "single";
   options: OptionsProps[];
 };
 
-export type AnswerProps = {
+export type OptionsProps = {
   id: number;
-  question_id: number;
   text: string;
-  is_correct: number;
+  is_correct: 0 | 1;
 };

@@ -1,11 +1,12 @@
 import { NavLink } from "react-router-dom";
 import ToggleTheme from "../ToggleTheme";
+import styles from "./styles.module.scss"
 
 const Header = () => {
   return (
-    <header>
+    <header className={`${styles.header} bg-3`}>
       <ToggleTheme />
-      <nav className="header box bg-3">
+      <nav>
         <ul>
           <li>
             <NavLink to="/">Home</NavLink>
