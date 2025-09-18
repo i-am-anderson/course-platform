@@ -1,0 +1,157 @@
+:root {
+  --color-1: #1e3a8a;
+  --color-2: #34d399;
+  --color-3: #d1d5db;
+}
+
+body.dark {
+  --color-1: #000;
+  --color-2: #000;
+  --color-3: #000;
+}
+
+$light: 300;
+$regular: 400;
+$bold: 700;
+
+$font-size-xs: 12px;
+$font-size-s: 13px;
+$font-size-sm: 14px;
+$font-size-md: 16px;
+$font-size-lg: 18px;
+$font-size-xl: 20px;
+$font-size-xxl: 24px;
+$font-size-xxxl: 32px;
+$font-size-giant: 36px;
+
+$mm: 320px; // MOBILE MINI
+$m: 468px; // MOBILE
+$st: 768px; // SMALL TABLET
+$t: 991px; // TABLET
+$d: 1025px; // DESKTOP
+$l: 1365px; // LARGE
+$w: 1920px; // WIDE
+$uw: 2560px; // ULTRAWIDE
+
+body {
+  font-family: sans-serif;
+  margin: 0;
+  color: var(--color-2);
+  background: var(--color-1);
+}
+
+.box {
+  padding: 1.25rem;
+  border-radius: 1.25rem;
+  background: var(--color-3);
+  outline: 2px solid var(--color-1);
+}
+
+button {
+  all: unset;
+  font-family: sans-serif;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+button:disabled {
+  outline: 2px solid var(--color-1);
+  border-radius: 0.75rem;
+}
+
+h1,
+h2,
+h3 {
+  font-weight: 600;
+  margin: 0;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.flex {
+  display: flex;
+  gap: 1.25rem;
+}
+
+.flex > * {
+  flex: 1;
+}
+
+.mb {
+  margin-bottom: 1.25rem;
+}
+
+.bg-1 {
+  background: var(--color-1);
+}
+
+.bg-2 {
+  background: var(--color-2);
+}
+
+.bg-3 {
+  background: var(--color-3);
+}
+
+.container {
+  display: grid;
+  padding: 1.25rem;
+  gap: 1.25rem;
+  grid-template-columns: 240px auto;
+}
+
+.sidenav {
+  height: fit-content;
+}
+
+.sidenav li {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.sidenav li span {
+  width: 2rem;
+  height: 2rem;
+  background: var(--color-3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 1.25rem;
+}
+
+.sidenav li a {
+  flex: 1;
+  font-size: 1.125rem;
+  text-decoration: none;
+  margin: 0.25rem 0;
+  color: var(--color-1);
+  padding: 0.75rem;
+}
+
+.sidenav li:hover span {
+  background: var(--color-3);
+}
+
+@media (max-width: $st) {
+  .container {
+    grid-template-columns: 1fr;
+  }
+
+  .flex {
+    flex-direction: column;
+  }
+
+  .sidenav ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .sidenav li a {
+    font-size: 0.875rem;
+  }
+}

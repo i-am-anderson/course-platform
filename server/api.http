@@ -1,0 +1,6 @@
+### Buscar pergunta
+GET http://localhost:5000/api/v1/question/1
+
+
+### Verificar resposta
+GET http://localhost:5000/api/v1/question/1/answer/1
