@@ -1,18 +1,18 @@
 .sidenav {
-  border: 1px solid #e7e7e7;
+  border-width: 1px;
+  border-style: solid;
   width: 100%;
   height: calc(100vh - 70px);
-  background-color: #fff;
   transition: 0.3s all;
-  
+
   &[data-toggle="0"] {
-    width: 300px;
-    padding: 15px;
-  }
-  
-  &[data-toggle="1"] {
     width: 0;
     padding: 0;
+  }
+
+  &[data-toggle="1"] {
+    width: 300px;
+    padding: 15px;
   }
 
   &__level-1 {
@@ -24,7 +24,8 @@
     margin-left: 10px;
     margin-bottom: 20px;
     padding-bottom: 10px;
-    border-bottom: 1px solid #e7e7e7;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
   }
 
   &__module {

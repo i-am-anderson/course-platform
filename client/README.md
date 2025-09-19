@@ -2,8 +2,17 @@
 
 ## Uso da IA
 1 - tipagem como "import modules from "@/src/configs/modules.json" with { type: "json" }", a IA ainda substituiu o 'with' por 'assert'
-2 - ajuste nesse tipo "const inputs = Array.from(event.currentTarget.querySelectorAll<HTMLInputElement | HTMLSelectElement>('input[name="options"]:checked, select[name="options"]'),);"
-3 - 
+```json
+prompt: ...
+```
+2 - ajuste nessa tipagem "const inputs = Array.from(event.currentTarget.querySelectorAll<HTMLInputElement | HTMLSelectElement>('input[name="options"]:checked, select[name="options"]'),);"
+```json
+prompt: ...
+```
+3 - Ajuda na substituição do @import (deprecated) no SCSS para o @use
+```json
+prompt: ...
+```
 
 ## Processo Criativo
 1 - Definição da estrutura geral aproximada 
@@ -17,4 +26,9 @@
 ## Escolha do Layout
 1 - Lembra o PowerPoint
 2 - Tem elementos padrão do mercado
-3 - Todos os links estão visiveis e o usuário tem feedback do processo 
+3 - Todos os links estão visiveis e o usuário tem feedback do processo
+
+## Escolhas na arquitetura
+- Uso mínimo de bibliotecas
+- Preferência em criação de hooks e de uso de componentes nativos
+- Flexibilidade de uso dos componentes (fácil intercambialidade)

@@ -7,8 +7,8 @@ const ToggleTheme = () => {
 
   return (
     <div className={styles.toggleContainer}>
-      <Sun color="#000" size={20} />
-      <label htmlFor="toggle-theme" className={styles.toggleLabel}>
+      <Sun className="icon-color-2" size={20} />
+      <label htmlFor="toggle-theme" className={`${styles.toggleLabel} border-color-2`}>
         <input
           type="checkbox"
           id="toggle-theme"
@@ -16,9 +16,9 @@ const ToggleTheme = () => {
           checked={theme === "light"}
           className={styles.toggleInput}
         />
-        <span className={styles.toggleFakeButton}>{theme}</span>
+        <span className={`${styles.toggleFakeButton} bg-2`}>{theme}</span>
       </label>
-      <Moon color="#000" size={20} />
+      <Moon className="icon-color-2" size={20} />
     </div>
   );
 };

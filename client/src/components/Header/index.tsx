@@ -10,10 +10,10 @@ const Header = () => {
     const { toggleSidenav } = useSidebarContext();
 
   return (
-    <header className={`${styles.header}`}>
+    <header className={`${styles.header} bg-1 border-color-1`}>
       <div>
         <button onClick={toggleSidenav}>
-          <Menu color="#000" size={36} />
+          <Menu className="icon-color-2" size={36} />
         </button>
       </div>
 

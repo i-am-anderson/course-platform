@@ -5,13 +5,16 @@ import Header from "./components/Header";
 import Sidenav from "./components/Sidenav";
 import Exam from "./pages/Exam";
 import Module from "./pages/Module";
+import useSidenavContext from "./contexts/SidenavContext";
 
 function App() {
+     const { sidenav } = useSidenavContext();
+
   return (
     <BrowserRouter>
       <main>
         <Header />
-        <section className="section">
+        <section className="section" data-toggle={sidenav}>
           <Sidenav />
           <div className="container">
             <Routes>

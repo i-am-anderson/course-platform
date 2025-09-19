@@ -4,16 +4,23 @@ import type {ModuleProps, NavigationProps, TopicProps} from '@/types/modules'
 import styles from "./styles.module.scss"
 import modules from "@/src/configs/modules.json" with { type: "json" }; 
 import Image from "@/src/components/Image";
+import useDevice from "@/src/hooks/useDevice";
 
 const Module = () => {
-  const small = "https://placehold.co/300x200.jpg";
-  const medium = "https://placehold.co/768x400.jpg";
-  const large = "https://placehold.co/1280x600.jpg";
+  // const small = "https://placehold.co/300x200.jpg";
+  // const medium = "https://placehold.co/768x400.jpg";
+  // const large = "https://placehold.co/1280x600.jpg";
+
+  const small = "https://res.cloudinary.com/dgkpxwcel/image/upload/f_auto/q_auto/c_scale,w_300/v1758288559/placeholder_sflq1m.jpg";
+  const medium = "https://res.cloudinary.com/dgkpxwcel/image/upload/f_auto/q_auto/c_scale,w_768/v1758288559/placeholder_sflq1m.jpg";
+  const large = "https://res.cloudinary.com/dgkpxwcel/image/upload/f_auto/q_auto/c_scale,w_1280/v1758288559/placeholder_sflq1m.jpg";
 
   const { pathname, hash } = useLocation()
   const [data, setData] = useState<ModuleProps>()
   const [topic, setTopic] = useState<TopicProps>()
   const [navigation, setNavigation] = useState<NavigationProps>("");
+
+  const {isMobile, isDesktop, isTablet} = useDevice()
 
   useEffect(()=>{
     const pageData = modules.filter(({link})=>  link === pathname )
@@ -25,6 +32,10 @@ const Module = () => {
 
   return (
     <div className={`${styles.module}`}>
+      {isMobile && "Mobile"}
+      {isTablet && "Tablet"}
+      {isDesktop && "Desktop"}
+
       <div className={`${styles.module__wrapper}`}>
         <div className={`${styles.module__head}`}>
           <h1 className={`${styles.module__title}`}>{data?.module}</h1>

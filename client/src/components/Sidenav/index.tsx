@@ -9,12 +9,12 @@ const Sidenav = () => {
     const { sidenav } = useSidenavContext();
 
   return (
-    <nav className={`${styles.sidenav}`} data-toggle={sidenav}>
+    <nav className={`${styles.sidenav} border-color-1 bg-2`} data-toggle={sidenav}>
       <ul className={`${styles['sidenav__level-1']}`}>
         {modules.map(({ module, link, topics }) => (
           <li className={styles.sidenav__module} key={link}>
             <span><NavLink to={link}>{module}</NavLink></span>
-            <ul className={`${styles['sidenav__level-2']}`}>
+            <ul className={`${styles['sidenav__level-2']} border-color-1`}>
               {topics.map(({topic, link: link_})=>(
                 <li className={styles.sidenav__topic} key={link_} ><NavLink to={link_} data-disabled={true}>{topic}</NavLink></li>
               ))}

@@ -11,7 +11,7 @@ export const SidenavContextProvider = ({ children }: { children: ReactNode }) =>
 
   const toggleSidenav = (): void => {
     const newdddSidenav = sidenav === 0 ? 1 : 0;
-    localStorage.setItem("sidenav", `${!newdddSidenav}`);
+    localStorage.setItem("sidenav", `${newdddSidenav}`);
     setdddSidenav(newdddSidenav);
   };
 

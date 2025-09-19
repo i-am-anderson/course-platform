@@ -1,37 +1,31 @@
+@use "./variables" as *;
+
 :root {
-  --color-1: #1e3a8a;
-  --color-2: #34d399;
-  --color-3: #d1d5db;
+  --color--1: #{$color-blue}; // Primária
+  --color--2: #{$color-gray}; // Secundária
+  --color--3: #{$color-green}; // Destaque
+
+  --color--1-80: #{$color-blue-80}; // 80%
+  --color--1-60: #{$color-blue-60}; // 60%
+  --color--1-40: #{$color-blue-40}; // 40%
+  --color--1-20: #{$color-blue-20}; // 20%
+
+  --color--2-80: #{$color-gray-80}; // 80%
+  --color--2-60: #{$color-gray-60}; // 60%
+  --color--2-40: #{$color-gray-40}; // 40%
+  --color--2-20: #{$color-gray-20}; // 20%
+
+  --color--3-80: #{$color-green-80}; // 80%
+  --color--3-60: #{$color-green-60}; // 60%
+  --color--3-40: #{$color-green-40}; // 40%
+  --color--3-20: #{$color-green-20}; // 20%
 }
 
 html[data-theme="dark"] {
-  --color-1: #d1d5db;
-  --color-2: #34d399;
-  --color-3: #1e3a8a;
+  --color-1: #{$color-green};
+  --color-2: #{$color-gray};
+  --color-3: #{$color-blue};
 }
-
-$light: 300;
-$regular: 400;
-$bold: 700;
-
-$font-size-xs: 12px;
-$font-size-s: 13px;
-$font-size-sm: 14px;
-$font-size-md: 16px;
-$font-size-lg: 18px;
-$font-size-xl: 20px;
-$font-size-xxl: 24px;
-$font-size-xxxl: 32px;
-$font-size-giant: 36px;
-
-$mm: 320px; // MOBILE MINI
-$m: 468px; // MOBILE
-$st: 768px; // SMALL TABLET
-$t: 991px; // TABLET
-$d: 1025px; // DESKTOP
-$l: 1365px; // LARGE
-$w: 1920px; // WIDE
-$uw: 2560px; // ULTRAWIDE
 
 *,
 *::before,
@@ -49,8 +43,7 @@ body {
 body {
   font-family: sans-serif;
   margin: 0;
-  color: var(--color-2);
-  background: #ccc;
+  background: var(--color--2-80);
 }
 
 a {
@@ -100,23 +93,56 @@ a[data-disabled="true"] {
 }
 
 .bg-1 {
-  background: var(--color-1);
+  background: var(--color--1);
 }
 
 .bg-2 {
-  background: var(--color-2);
+  background: var(--color--2);
 }
 
 .bg-3 {
-  background: var(--color-3);
+  background: var(--color--3);
+}
+
+.border-color-1 {
+  border-color: var(--color--1-40);
+}
+
+.border-color-2 {
+  border-color: var(--color--2-40);
+}
+
+.border-color-3 {
+  border-color: var(--color--3-40);
+}
+
+.icon-color-1 {
+  color: var(--color--1);
+}
+
+.icon-color-2 {
+  color: var(--color--2);
+}
+
+.icon-color-3 {
+  color: var(--color--3);
 }
 
 .section {
-  display: grid;
-  grid-template-columns: 300px 1fr;
   height: calc(100vh - 70px);
   gap: 40px;
   padding-right: 40px;
+  transition: 0.3s all;
+}
+
+.section[data-toggle="1"] {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+}
+
+.section[data-toggle="0"] {
+  display: grid;
+  grid-template-columns: 0 1fr;
 }
 
 .container {
@@ -124,8 +150,8 @@ a[data-disabled="true"] {
   height: calc(100% - 80px);
   overflow-y: auto;
   margin: 40px 0 0;
-  background-color: #fff;
-  border: 1px solid #e7e7e7;
+  background-color: var(--color--2);
+  border: 1px solid var(--color--1-40);
   border-radius: 4px;
   padding: 30px;
 }
