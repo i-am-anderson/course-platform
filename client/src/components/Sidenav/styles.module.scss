@@ -1,5 +1,40 @@
 .sidenav {
-  border: 1px solid red;
-  width: 200px;
-  height: calc(100vh - 100px);
+  border: 1px solid #e7e7e7;
+  width: 100%;
+  height: calc(100vh - 70px);
+  background-color: #fff;
+  transition: 0.3s all;
+  
+  &[data-toggle="0"] {
+    width: 300px;
+    padding: 15px;
+  }
+  
+  &[data-toggle="1"] {
+    width: 0;
+    padding: 0;
+  }
+
+  &__level-1 {
+    overflow-y: auto;
+    height: 100%;
+  }
+
+  &__level-2 {
+    margin-left: 10px;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #e7e7e7;
+  }
+
+  &__module {
+    span {
+      font-size: 18px;
+      font-weight: 700;
+    }
+  }
+
+  &__topic {
+    padding: 10px;
+  }
 }

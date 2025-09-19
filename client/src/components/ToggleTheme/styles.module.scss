@@ -1,16 +1,16 @@
 .toggleContainer {
-  display: block;
-  width: 100px;
-  height: 25px;
-
-  border: 1px solid #000;
+  display: flex;
+  align-items: center;
+  gap: 5px;
 }
 
 .toggleLabel {
   cursor: pointer;
   display: block;
-  width: 100%;
-  height: 100%;
+  height: 24px;
+  width: 50px;
+  border: 1px solid #000;
+  border-radius: 4px;
   position: relative;
 }
 
@@ -20,16 +20,17 @@
 
 .toggleFakeButton {
   position: absolute;
-  top: 0;
-  left: 0;
+  top: 2px;
+  left: 2px;
   display: block;
-  width: 20px;
-  height: 20px;
-  background-color: red;
+  width: 18px;
+  height: 18px;
+  background-color: #000;
+  border-radius: 2px;
   font-size: 0;
   transition: 0.3s all;
 }
 
 .toggleInput:checked + .toggleFakeButton {
-  left: 80px;
+  left: 28px;
 }

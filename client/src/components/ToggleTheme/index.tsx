@@ -1,11 +1,13 @@
 import useThemeContext from "@/src/contexts/ThemeContext";
 import styles from "./styles.module.scss";
+import { Moon, Sun } from "lucide-react";
 
 const ToggleTheme = () => {
   const { theme, toggleTheme } = useThemeContext();
 
   return (
     <div className={styles.toggleContainer}>
+      <Sun color="#000" size={20} />
       <label htmlFor="toggle-theme" className={styles.toggleLabel}>
         <input
           type="checkbox"
@@ -16,6 +18,7 @@ const ToggleTheme = () => {
         />
         <span className={styles.toggleFakeButton}>{theme}</span>
       </label>
+      <Moon color="#000" size={20} />
     </div>
   );
 };

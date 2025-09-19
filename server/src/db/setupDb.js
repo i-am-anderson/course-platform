@@ -7,8 +7,9 @@ async function setup() {
     CREATE TABLE IF NOT EXISTS questions (
       id INTEGER PRIMARY KEY AUTOINCREMENT,
       question TEXT NOT NULL,
-      type TEXT NOT NULL CHECK (type IN ('single', 'multiple'))
-    );
+      type TEXT NOT NULL CHECK (type IN ('single', 'multiple')),
+      feedback TEXT NOT NULL
+      );
   `);
 
   await db.exec(`

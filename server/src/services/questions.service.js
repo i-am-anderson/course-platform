@@ -21,6 +21,7 @@ export async function searchQuestionById({ questionId }) {
     const res = {
       question_id: results[0].question_id,
       question: results[0].question,
+      feedback: results[0].feedback,
       type: results[0].type,
       options,
     };

@@ -1,6 +1,7 @@
 export type DataProps = {
   question_id: number;
   question: string;
+  feedback: string;
   type: "multiple" | "single";
   options: OptionsProps[];
 };

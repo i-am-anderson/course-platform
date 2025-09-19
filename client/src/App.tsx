@@ -19,7 +19,7 @@ function App() {
               <Route path="/modulo-1-primeiros-passos" element={<Module />} />
               <Route path="/modulo-2-configuracoes-iniciais" element={<Module />} />
               <Route path="/modulo-3-playlist" element={<Module />} />
-              <Route path="/checkpoint-exame" element={<Module />} />
+              <Route path="/checkpoint-exame" element={<Exam />} />
             </Routes>
           </div>
         </section>
