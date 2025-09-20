@@ -26,5 +26,7 @@ export interface ModuleProps {
   id: string;
   module: string;
   link: string;
+  description: string;
+  coverImage: string;
   topics: TopicProps[];
 }

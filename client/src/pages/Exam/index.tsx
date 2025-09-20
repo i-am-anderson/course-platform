@@ -1,48 +1,19 @@
 import { useEffect, useState, type FormEvent } from "react";
 import useFetch from "@/src/hooks/useFetch";
-import type { DataProps } from "@/types/data";
-import styles from "./styles.module.scss";
 import useSidenavContext from "@/src/contexts/SidenavContext";
+import examStorage from "@/src/data/examStorage";
 
-type ExamQuestionProps = {
-  question_id: number;
-  status: "pending" | "completed";
-  remainingAttempts: number;
-};
+import type { DataProps } from "@/types/data";
+import type { ExamStorageProps, ExamQuestionProps } from "@/types/exam";
 
-type ExamStorageProps = {
-  status: "pending" | "completed" | "failed";
-  last_question: number;
-  score: number;
-  questions: ExamQuestionProps[];
-};
+import styles from "./styles.module.scss";
+import Feedback from "./components/Feedback";
+import ExamBoard from "./components/ExamBoard";
 
 const Exam = () => {
   const url = import.meta.env.VITE_API_URL;
   const examLocal = localStorage.getItem("exam");
   const examLocaljson = examLocal ? JSON.parse(examLocal) : null;
-  const examStorage: ExamStorageProps = {
-    status: "pending",
-    last_question: 1,
-    score: 0,
-    questions: [
-      {
-        question_id: 1,
-        status: "pending",
-        remainingAttempts: 3,
-      },
-      {
-        question_id: 2,
-        status: "pending",
-        remainingAttempts: 3,
-      },
-      {
-        question_id: 3,
-        status: "pending",
-        remainingAttempts: 3,
-      },
-    ],
-  };
 
   // Hooks
   const { changePageId } = useSidenavContext();
@@ -94,14 +65,15 @@ const Exam = () => {
     ) {
       // Só entra aqui se acertou a questão
       setExam((prev: ExamStorageProps) => {
-        const updatedQuestions = prev.questions.map((question_: ExamQuestionProps) =>
-          question_.question_id === count
-            ? ({
-                ...question_,
-                status: "completed",
-                remainingAttempts: question_.remainingAttempts,
-              } as ExamQuestionProps)
-            : question_,
+        const updatedQuestions = prev.questions.map(
+          (question_: ExamQuestionProps) =>
+            question_.question_id === count
+              ? ({
+                  ...question_,
+                  status: "completed",
+                  remainingAttempts: question_.remainingAttempts,
+                } as ExamQuestionProps)
+              : question_,
         );
 
         const examCompleted = updatedQuestions.every(
@@ -140,10 +112,14 @@ const Exam = () => {
     if (question && question.remainingAttempts > 0) {
       // Só entra aqui se errou a questão
       setExam((prev: ExamStorageProps) => {
-        const updatedQuestions = prev.questions.map((question_: ExamQuestionProps) =>
-          question_.question_id === count
-            ? { ...question_, remainingAttempts: question_.remainingAttempts - 1 }
-            : question_,
+        const updatedQuestions = prev.questions.map(
+          (question_: ExamQuestionProps) =>
+            question_.question_id === count
+              ? {
+                  ...question_,
+                  remainingAttempts: question_.remainingAttempts - 1,
+                }
+              : question_,
         );
 
         const examPending = updatedQuestions.every(
@@ -191,74 +167,15 @@ const Exam = () => {
 
   return (
     <div className={`${styles.exam}`}>
-      <h1>Exame</h1>
       {exam.status === "pending" ? (
-        <div>
-          <form onSubmit={handleSubmit}>
-            <h2>{data?.question}</h2>
-            <small>
-              {data?.type === "multiple"
-                ? "* múltiplas respostas"
-                : "* resposta única"}
-            </small>
-
-            {data?.type === "multiple" ||
-            (data?.type === "single" && data?.question_id % 3 !== 0) ? (
-              <ul>
-                {data?.options.map(({ id, text }) => (
-                  <li key={id}>
-                    <input
-                      type={data?.type === "multiple" ? "checkbox" : "radio"}
-                      name="options"
-                      id={id.toString()}
-                      value={text}
-                      onChange={() => setNotice(null)}
-                    />
-                    <label htmlFor={id.toString()}>{text}</label>
-                  </li>
-                ))}
-              </ul>
-            ) : (
-              <select
-                name="options"
-                id="options"
-                onChange={() => setNotice(null)}
-              >
-                <option disabled>Selecione uma resposta</option>
-                {data?.options.map(({ id, text }) => (
-                  <option key={id} value={id}>
-                    {text}
-                  </option>
-                ))}
-              </select>
-            )}
-
-            <button type="submit">Verificar</button>
-          </form>
-          <span>{notice}</span>
-        </div>
+        <ExamBoard
+          data={data}
+          notice={notice}
+          setNotice={setNotice}
+          handleSubmit={handleSubmit}
+        />
       ) : (
-        <div>
-          <h2>Feedback</h2>
-
-          <h4>
-            {data?.type === "multiple"
-              ? "Respostas corretas:"
-              : "Resposta correta:"}
-          </h4>
-          <ul>
-            {data?.options
-              .filter(({ is_correct }) => is_correct === 1)
-              .map(({ text, id }) => (
-                <li key={id}> - {text}</li>
-              ))}
-          </ul>
-
-          <h4>Por quê?</h4>
-          <p>{data?.feedback}</p>
-
-          <button onClick={handleClick}>Reiniciar teste</button>
-        </div>
+        <Feedback data={data} handleClick={handleClick} />
       )}
     </div>
   );

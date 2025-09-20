@@ -1,5 +1,3 @@
-import { NavLink } from "react-router-dom";
-
 import ToggleTheme from "@/src/components/ToggleTheme";
 
 import styles from "./styles.module.scss";
@@ -11,15 +9,6 @@ const Header = () => {
       <div>
         <Hamburguer />
       </div>
-
-      <nav>
-        <ul>
-          <li>
-            <NavLink to="/">Home</NavLink>
-          </li>
-        </ul>
-      </nav>
-
       <div>
         <ToggleTheme />
       </div>

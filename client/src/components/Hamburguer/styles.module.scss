@@ -29,7 +29,7 @@
     bottom: 5px;
   }
   
-  [data-click="false"] & {
+  [data-click="true"] & {
     &__first {
       transform: translateY(14px) translateX(0px) rotate(45deg);
     }

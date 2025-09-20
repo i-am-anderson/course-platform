@@ -3,6 +3,8 @@
     "id": "xXEAA7",
     "module": "Módulo 1 – Introdução e Conceitos Fundamentais",
     "link": "/introducao-e-conceitos-fundamentais",
+    "description": "Um guia rápido para entender os conceitos básicos de Hooks no React.",
+    "coverImage": "/v1758288559/placeholder_sflq1m.jpg",
     "topics": [
       {
         "id": "KvWH2m",
@@ -75,6 +77,8 @@
     "id": "fT52qS",
     "module": "Módulo 2 – Planejamento da Playlist",
     "link": "/planejamento-da-playlist",
+    "description": "Um guia rápido para entender os conceitos básicos de Hooks no React.",
+    "coverImage": "/v1758288559/placeholder_sflq1m.jpg",
     "topics": [
       {
         "id": "TdfLCj",
@@ -142,6 +146,8 @@
     "id": "K1ObCg",
     "module": "Módulo 3 – Organização e Estética",
     "link": "/organizacao-e-estetica",
+    "description": "Um guia rápido para entender os conceitos básicos de Hooks no React.",
+    "coverImage": "/v1758288559/placeholder_sflq1m.jpg",
     "topics": [
       {
         "id": "gdt5dx",
@@ -209,6 +215,8 @@
     "id": "CYurIt",
     "module": "Módulo 4 – Compartilhamento e Engajamento",
     "link": "/compartilhamento-e-engajamento",
+    "description": "Um guia rápido para entender os conceitos básicos de Hooks no React.",
+    "coverImage": "/v1758288559/placeholder_sflq1m.jpg",
     "topics": [
       {
         "id": "g8Zzqk",

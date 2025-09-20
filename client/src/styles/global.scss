@@ -102,12 +102,57 @@ select {
   color: inherit;
 }
 
-// Styles
-a[data-disabled="true"] {
-  opacity: 0.5;
-  pointer-events: none;
+// Tag Styles
+a {
+  color: var(--color--1);
+
+  [data-disabled="true"] {
+    opacity: 0.5;
+    pointer-events: none;
+  }
+  &:hover {
+    text-shadow: 1px 0 0 currentColor;
+    color: var(--color--3);
+  }
 }
 
+[data-active="true"] {
+  > a {
+    text-shadow: 1px 0 0 currentColor;
+    color: var(--color--3);
+  }
+}
+
+h1,
+h2,
+h3 {
+  color: var(--color--1);
+  font-weight: $bold;
+}
+
+h1 {
+  font-size: $font-size-xxxl;
+}
+
+h2 {
+  font-size: $font-size-xxl;
+}
+
+h3 {
+  font-size: $font-size-xl;
+}
+
+a,
+p,
+li,
+span,
+label {
+  font-size: $font-size-md;
+  color: var(--color--1);
+  font-weight: $regular;
+}
+
+// Class Styles
 .bg-1 {
   background: var(--color--1);
 }
