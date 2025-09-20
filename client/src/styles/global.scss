@@ -42,6 +42,7 @@ html[data-theme="dark"] {
   --color--3-20: #{$color-gray-20}; // 20%
 }
 
+// Resets
 *,
 *::before,
 *::after {
@@ -171,7 +172,6 @@ a[data-disabled="true"] {
   .section[data-toggle="0"] {
     grid-template-columns: 1fr;
   }
-
 }
 
 .container {
@@ -199,6 +199,10 @@ a[data-disabled="true"] {
   }
 }
 
+a {
+  border-color: var(--color--3);
+}
+
 // Scrollbar
 ::-webkit-scrollbar {
   width: 10px;
@@ -214,4 +218,52 @@ a[data-disabled="true"] {
 
 ::-webkit-scrollbar-thumb:hover {
   background: var(--color--1-80);
+}
+
+// Button, Input, Select
+button {
+  background: var(--color--1);
+  color: #fff;
+  padding: 10px 15px;
+  border-radius: 4px;
+  transition: 0.3s all;
+  &:hover {
+    background: var(--color--1-80);
+  }
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+  appearance: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--color--1);
+  border-radius: 4px;
+
+  &::before {
+    content: "";
+    display: block;
+    background-color: var(--color--1);
+    width: 12px;
+    height: 12px;
+    border-radius: 2px;
+    transform: scale(0);
+    transition: 0.3s all;
+  }
+
+  &:checked::before {
+    transform: scale(1);
+  }
+}
+
+select {
+  display: block;
+  background: var(--color--2);
+  border: 2px solid var(--color--1);
+  color: var(--color--1);
+  padding: 10px 15px;
+  border-radius: 4px;
 }

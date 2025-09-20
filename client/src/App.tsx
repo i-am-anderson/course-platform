@@ -21,6 +21,7 @@ function App() {
               <Route path="/" element={<Home />} />
               <Route path="/introducao-e-conceitos-fundamentais" element={<Module />} />
               <Route path="/planejamento-da-playlist" element={<Module />} />
+              <Route path="/organizacao-e-estetica" element={<Module />} />
               <Route path="/compartilhamento-e-engajamento" element={<Module />} />
               <Route path="/exame" element={<Exam />} />
             </Routes>

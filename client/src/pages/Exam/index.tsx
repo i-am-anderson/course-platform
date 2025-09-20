@@ -1,19 +1,57 @@
-import { useState, type FormEvent } from "react";
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import { useEffect, useState, type FormEvent } from "react";
 import useFetch from "@/src/hooks/useFetch";
 import type { DataProps } from "@/types/data";
 import styles from "./styles.module.scss";
+import useSidenavContext from "@/src/contexts/SidenavContext";
+
+type ExamQuestionProps = {
+  question_id: number;
+  status: "pending" | "completed";
+  remainingAttempts: number;
+};
+
+type ExamStorageProps = {
+  status: "pending" | "completed" | "failed";
+  last_question: number;
+  score: number;
+  questions: ExamQuestionProps[];
+};
 
 const Exam = () => {
   const url = import.meta.env.VITE_API_URL;
+  const examLocal = localStorage.getItem("exam");
+  const examLocaljson = examLocal ? JSON.parse(examLocal) : null;
+  const examStorage: ExamStorageProps = {
+    status: "pending",
+    last_question: 1,
+    score: 0,
+    questions: [
+      {
+        question_id: 1,
+        status: "pending",
+        remainingAttempts: 3,
+      },
+      {
+        question_id: 2,
+        status: "pending",
+        remainingAttempts: 3,
+      },
+      {
+        question_id: 3,
+        status: "pending",
+        remainingAttempts: 3,
+      },
+    ],
+  };
 
-  const scoreBase = 12;
-  const qtyAttempt = 3;
-  const qtyQuestions = 3;
-
+  // Hooks
+  const { changePageId } = useSidenavContext();
+  const [exam, setExam] = useState(examLocaljson ? examLocaljson : examStorage);
+  const [count, setCount] = useState(
+    examLocaljson ? examLocaljson.last_question : examStorage.last_question,
+  );
   const [notice, setNotice] = useState<string | null>(null);
-  const [count, setCount] = useState(1);
-  const [attempt, setAttempt] = useState(1);
-  const [score, setScore] = useState(0);
 
   const {
     loading,
@@ -47,8 +85,6 @@ const Exam = () => {
       else return +input.value;
     });
 
-    console.log("Hello World!", answerIds);
-
     const template = data?.options
       .filter(({ is_correct }) => is_correct === 1)
       .map(({ id }) => +id);
@@ -57,14 +93,75 @@ const Exam = () => {
       template?.length === answerIds.length &&
       answerIds.every((id) => template.includes(id))
     ) {
-      setScore(score + scoreBase / attempt);
-      setAttempt(1);
+      // Só entra aqui se acertou a questão
+      setExam((prev: any) => {
+        const updatedQuestions = prev.questions.map((q: any) =>
+          q.question_id === count
+            ? {
+                ...q,
+                status: "completed",
+                remainingAttempts: q.remainingAttempts,
+              }
+            : q,
+        );
+
+        const examCompleted = updatedQuestions.every(
+          (q: any) => q.status === "completed",
+        );
+
+        const totalScore = examCompleted
+          ? updatedQuestions
+              .map((item: ExamQuestionProps) => item.remainingAttempts)
+              .reduce((a: number, b: number) => a + b, 0)
+          : 0;
+
+        const updatedExam = {
+          ...prev,
+          status: examCompleted ? "completed" : "pending",
+          last_question:
+            count + 1 === prev.questions.length
+              ? prev.last_question
+              : count + 1,
+          score: totalScore,
+          questions: updatedQuestions,
+        };
+
+        localStorage.setItem("exam", JSON.stringify(updatedExam));
+
+        return updatedExam;
+      });
+
       setCount(count + 1);
       return;
     }
 
-    if (attempt <= qtyAttempt) {
-      setAttempt(attempt + 1);
+    const question = exam.questions.find(
+      (q: ExamQuestionProps) => q.question_id === count,
+    );
+    if (question && question.remainingAttempts > 0) {
+      // Só entra aqui se errou a questão
+      setExam((prev: any) => {
+        const updatedQuestions = prev.questions.map((q: any) =>
+          q.question_id === count
+            ? { ...q, remainingAttempts: q.remainingAttempts - 1 }
+            : q,
+        );
+
+        const examPending = updatedQuestions.every(
+          (q: any) => q.remainingAttempts > 0,
+        );
+
+        const updatedExam = {
+          ...prev,
+          status: examPending ? "pending" : "failed",
+          questions: updatedQuestions,
+        };
+
+        localStorage.setItem("exam", JSON.stringify(updatedExam));
+
+        return updatedExam;
+      });
+
       setNotice("Sua resposta está incorreta!");
     }
   };
@@ -72,26 +169,31 @@ const Exam = () => {
   const handleClick = () => {
     setNotice(null);
     setCount(1);
-    setAttempt(1);
-    setScore(0);
+    setExam(examStorage);
   };
+
+  useEffect(() => {
+    changePageId("exame");
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   if (loading) return <>Carregando...</>;
   if (error) return <></>;
 
-  if (count > qtyQuestions)
+  if (exam.status === "completed") {
     return (
       <div>
         <h1>Sua Pontuação:</h1>
-        <h4>{score}</h4>
+        <h3>{((exam.score / 9) * 100).toFixed(1)}%</h3>
         <button onClick={handleClick}>Reiniciar teste</button>
       </div>
     );
+  }
 
   return (
     <div className={`${styles.exam}`}>
-      <h1>Exam</h1>
-      {attempt <= qtyAttempt ? (
+      <h1>Exame</h1>
+      {exam.status === "pending" ? (
         <div>
           <form onSubmit={handleSubmit}>
             <h2>{data?.question}</h2>
@@ -148,8 +250,8 @@ const Exam = () => {
           <ul>
             {data?.options
               .filter(({ is_correct }) => is_correct === 1)
-              .map(({ text }) => (
-                <li> - {text}</li>
+              .map(({ text, id }) => (
+                <li key={id}> - {text}</li>
               ))}
           </ul>
 

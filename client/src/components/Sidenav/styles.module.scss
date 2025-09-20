@@ -66,7 +66,9 @@
   &__module {
     &[data-active="true"] {
       > a {
-        background-color: blue;
+        border-width: 1px;
+        border-style: solid;
+        border-radius: 4px;
       }
     }
     > a {
@@ -76,7 +78,7 @@
       font-size: 18px;
       font-weight: 700;
       &:hover {
-        background-color: red;
+        opacity: 0.5;
       }
     }
   }
@@ -84,7 +86,9 @@
   &__topic {
     &[data-active="true"] {
       a {
-        background-color: blue;
+        border-width: 1px;
+        border-style: solid;
+        border-radius: 4px;
       }
     }
     a {
@@ -92,7 +96,7 @@
       width: 100%;
       padding: 10px;
       &:hover {
-        background-color: red;
+        opacity: 0.5;
       }
     }
   }

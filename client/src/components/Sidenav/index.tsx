@@ -37,7 +37,7 @@ const Sidenav = () => {
             <NavLink to="/exame">Checkpoint - Exame</NavLink>
             
             <ul className={`${styles['sidenav__level-2']} border-color-1`}>
-                <li className={styles.sidenav__topic}>
+                <li className={styles.sidenav__topic} data-active={pageId === "exame" ? "true" : "false"}>
                   <NavLink to="/exame">Exame</NavLink>
                 </li>
             </ul>
