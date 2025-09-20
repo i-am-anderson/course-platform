@@ -1,23 +1,30 @@
-export type TopicProps = {
-  topic: string;
-  link: string;
+type ParagraphContentProps = {
+  id: string;
+  type: "paragraph";
+  text: string;
 };
 
-export type ModuleProps = {
+type ImageContentProps = {
+  id: string;
+  type: "image";
+  src: string;
+  alt: string;
+};
+
+type ContentBlockProps = ParagraphContentProps | ImageContentProps;
+
+export interface TopicProps {
+  id: string;
+  title: string;
+  hash: string;
+  description: string;
+  coverImage: string;
+  content: ContentBlockProps[];
+}
+
+export interface ModuleProps {
+  id: string;
   module: string;
   link: string;
   topics: TopicProps[];
-};
-
-export type NavigationProps =
-  | ""
-  | "#/1-1-apresentacao"
-  | "#/1-2-o-que-e-o-spotify"
-  | "#/1-3-resumo-introducao"
-  | "#/2-1-apresentacao"
-  | "#/2-2-configuracao-do-usuario"
-  | "#/2-3-preferencias"
-  | "#/2-4-resumo-configuracoes"
-  | "#/3-1-apresentacao"
-  | "#/3-2-playlist"
-  | "#/3-3-resumo-playlist";
+}

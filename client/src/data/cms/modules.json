@@ -1,0 +1,275 @@
+[
+  {
+    "id": "xXEAA7",
+    "module": "Módulo 1 – Introdução e Conceitos Fundamentais",
+    "link": "/introducao-e-conceitos-fundamentais",
+    "topics": [
+      {
+        "id": "KvWH2m",
+        "title": "1.1. O que é uma playlist temática?",
+        "hash": "o-que-e-uma-playlist-tematica",
+        "description": "Um guia rápido para entender os conceitos básicos de Hooks no React.",
+        "coverImage": "/v1758288559/placeholder_sflq1m.jpg",
+        "content": [
+          {
+            "id": "0470jK",
+            "type": "paragraph",
+            "text": "'Oi, Shad, você está on-line?' 'Claro que estou!' Quantos de nós ainda verificam se estamos ou não on-line? Esperamos que nossos dispositivos, telefones celulares, tablets, notebooks e computadores desktop estejam sempre conectados à Internet global. Usamos essa rede para interagir com amigos, fazer compras, compartilhar fotos e experiências e aprender. internet se tornou uma parte tão importante da vida cotidiana que quase a tomamos como certa."
+          },
+          {
+            "id": "1234ab",
+            "type": "paragraph",
+            "text": "Normalmente, quando as pessoas usam o termo internet, elas não estão se referindo às conexões físicas no mundo real. Na verdade, eles tendem a pensar nisso como um conjunto de conexões. É o 'lugar' onde as pessoas vão para encontrar ou compartilhar informações."
+          },
+          {
+            "id": "6jhOV5",
+            "type": "image",
+            "src": "/v1758328107/pleceholder2_me4gss.jpg",
+            "alt": "Exemplo de código com useState"
+          }
+        ]
+      },
+      {
+        "id": "x3IOKh",
+        "title": "1.2. Objetivo da playlist",
+        "hash": "objetivo-da-playlist",
+        "description": "Um guia rápido para entender os conceitos básicos de Hooks no React.",
+        "coverImage": "/v1758288559/placeholder_sflq1m.jpg",
+        "content": [
+          {
+            "id": "Ek5OU8",
+            "type": "paragraph",
+            "text": "Os Hooks foram introduzidos no React 16.8 e permitem usar estado e outros recursos sem escrever classes."
+          },
+          {
+            "id": "23xKcg",
+            "type": "image",
+            "src": "/v1758328107/pleceholder2_me4gss.jpg",
+            "alt": "Exemplo de código com useState"
+          }
+        ]
+      },
+      {
+        "id": "L71Lmc",
+        "title": "1.3. Conhecendo o Spotify como ferramenta",
+        "hash": "conhecendo-o-spotify-como-ferramenta",
+        "description": "Um guia rápido para entender os conceitos básicos de Hooks no React.",
+        "coverImage": "/v1758288559/placeholder_sflq1m.jpg",
+        "content": [
+          {
+            "id": "iAA8cm",
+            "type": "paragraph",
+            "text": "Os Hooks foram introduzidos no React 16.8 e permitem usar estado e outros recursos sem escrever classes."
+          },
+          {
+            "id": "rCiZ25",
+            "type": "image",
+            "src": "/v1758328107/pleceholder2_me4gss.jpg",
+            "alt": "Exemplo de código com useState"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "fT52qS",
+    "module": "Módulo 2 – Planejamento da Playlist",
+    "link": "/planejamento-da-playlist",
+    "topics": [
+      {
+        "id": "TdfLCj",
+        "title": "2.1. Definindo o tema e o público-alvo",
+        "hash": "definindo-o-tema-e-o-publico-alvo",
+        "description": "Um guia rápido para entender os conceitos básicos de Hooks no React.",
+        "coverImage": "/v1758288559/placeholder_sflq1m.jpg",
+        "content": [
+          {
+            "id": "kaAUd7",
+            "type": "paragraph",
+            "text": "Os Hooks foram introduzidos no React 16.8 e permitem usar estado e outros recursos sem escrever classes."
+          },
+          {
+            "id": "5cqbb5",
+            "type": "image",
+            "src": "/v1758328107/pleceholder2_me4gss.jpg",
+            "alt": "Exemplo de código com useState"
+          }
+        ]
+      },
+      {
+        "id": "S6rsqv",
+        "title": "2.2. Pesquisa e seleção de músicas",
+        "hash": "pesquisa-e-selecao-de-musicas",
+        "description": "Um guia rápido para entender os conceitos básicos de Hooks no React.",
+        "coverImage": "/v1758288559/placeholder_sflq1m.jpg",
+        "content": [
+          {
+            "id": "jBi1xG",
+            "type": "paragraph",
+            "text": "Os Hooks foram introduzidos no React 16.8 e permitem usar estado e outros recursos sem escrever classes."
+          },
+          {
+            "id": "CiZDq5",
+            "type": "image",
+            "src": "/v1758328107/pleceholder2_me4gss.jpg",
+            "alt": "Exemplo de código com useState"
+          }
+        ]
+      },
+      {
+        "id": "HBycLA",
+        "title": "2.3. Duração e equilíbrio da playlist",
+        "hash": "duracao-e-equilibrio-da-playlist",
+        "description": "Um guia rápido para entender os conceitos básicos de Hooks no React.",
+        "coverImage": "/v1758288559/placeholder_sflq1m.jpg",
+        "content": [
+          {
+            "id": "4oekrs",
+            "type": "paragraph",
+            "text": "Os Hooks foram introduzidos no React 16.8 e permitem usar estado e outros recursos sem escrever classes."
+          },
+          {
+            "id": "dYqays",
+            "type": "image",
+            "src": "/v1758328107/pleceholder2_me4gss.jpg",
+            "alt": "Exemplo de código com useState"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "K1ObCg",
+    "module": "Módulo 3 – Organização e Estética",
+    "link": "/organizacao-e-estetica",
+    "topics": [
+      {
+        "id": "gdt5dx",
+        "title": "3.1. Ordem e fluxo da playlist",
+        "hash": "ordem-e-fluxo-da-playlist",
+        "description": "Um guia rápido para entender os conceitos básicos de Hooks no React.",
+        "coverImage": "/v1758288559/placeholder_sflq1m.jpg",
+        "content": [
+          {
+            "id": "gKdcLf",
+            "type": "paragraph",
+            "text": "Os Hooks foram introduzidos no React 16.8 e permitem usar estado e outros recursos sem escrever classes."
+          },
+          {
+            "id": "Z5i9o3",
+            "type": "image",
+            "src": "/v1758328107/pleceholder2_me4gss.jpg",
+            "alt": "Exemplo de código com useState"
+          }
+        ]
+      },
+      {
+        "id": "F0fgkc",
+        "title": "3.2. Personalização visual",
+        "hash": "personalizacao-visual",
+        "description": "Um guia rápido para entender os conceitos básicos de Hooks no React.",
+        "coverImage": "/v1758288559/placeholder_sflq1m.jpg",
+        "content": [
+          {
+            "id": "xdo5YW",
+            "type": "paragraph",
+            "text": "Os Hooks foram introduzidos no React 16.8 e permitem usar estado e outros recursos sem escrever classes."
+          },
+          {
+            "id": "ocCR0V",
+            "type": "image",
+            "src": "/v1758328107/pleceholder2_me4gss.jpg",
+            "alt": "Exemplo de código com useState"
+          }
+        ]
+      },
+      {
+        "id": "sByUcT",
+        "title": "3.3. Ferramentas externas de apoio",
+        "hash": "ferramentas-externas-de-apoio",
+        "description": "Um guia rápido para entender os conceitos básicos de Hooks no React.",
+        "coverImage": "/v1758288559/placeholder_sflq1m.jpg",
+        "content": [
+          {
+            "id": "VM4Aa1",
+            "type": "paragraph",
+            "text": "Os Hooks foram introduzidos no React 16.8 e permitem usar estado e outros recursos sem escrever classes."
+          },
+          {
+            "id": "XiF20t",
+            "type": "image",
+            "src": "/v1758328107/pleceholder2_me4gss.jpg",
+            "alt": "Exemplo de código com useState"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "CYurIt",
+    "module": "Módulo 4 – Compartilhamento e Engajamento",
+    "link": "/compartilhamento-e-engajamento",
+    "topics": [
+      {
+        "id": "g8Zzqk",
+        "title": "4.1. Publicando e compartilhando",
+        "hash": "publicando-e-compartilhando",
+        "description": "Um guia rápido para entender os conceitos básicos de Hooks no React.",
+        "coverImage": "/v1758288559/placeholder_sflq1m.jpg",
+        "content": [
+          {
+            "id": "2steup",
+            "type": "paragraph",
+            "text": "Os Hooks foram introduzidos no React 16.8 e permitem usar estado e outros recursos sem escrever classes."
+          },
+          {
+            "id": "DTBs7T",
+            "type": "image",
+            "src": "/v1758328107/pleceholder2_me4gss.jpg",
+            "alt": "Exemplo de código com useState"
+          }
+        ]
+      },
+      {
+        "id": "obdm0l",
+        "title": "4.2. Engajamento do público",
+        "hash": "engajamento-do-publico",
+        "description": "Um guia rápido para entender os conceitos básicos de Hooks no React.",
+        "coverImage": "/v1758288559/placeholder_sflq1m.jpg",
+        "content": [
+          {
+            "id": "Rd4686",
+            "type": "paragraph",
+            "text": "Os Hooks foram introduzidos no React 16.8 e permitem usar estado e outros recursos sem escrever classes."
+          },
+          {
+            "id": "5b8yIf",
+            "type": "image",
+            "src": "/v1758328107/pleceholder2_me4gss.jpg",
+            "alt": "Exemplo de código com useState"
+          }
+        ]
+      },
+      {
+        "id": "UcIAQA",
+        "title": "4.3. Mantendo a playlist viva",
+        "hash": "mantendo-a-playlist-viva",
+        "description": "Um guia rápido para entender os conceitos básicos de Hooks no React.",
+        "coverImage": "/v1758288559/placeholder_sflq1m.jpg",
+        "content": [
+          {
+            "id": "KCHhZS",
+            "type": "paragraph",
+            "text": "Os Hooks foram introduzidos no React 16.8 e permitem usar estado e outros recursos sem escrever classes."
+          },
+          {
+            "id": "cPzPp7",
+            "type": "image",
+            "src": "/v1758328107/pleceholder2_me4gss.jpg",
+            "alt": "Exemplo de código com useState"
+          }
+        ]
+      }
+    ]
+  }
+]

@@ -19,10 +19,10 @@ function App() {
           <div className="container">
             <Routes>
               <Route path="/" element={<Home />} />
-              <Route path="/modulo-1-primeiros-passos" element={<Module />} />
-              <Route path="/modulo-2-configuracoes-iniciais" element={<Module />} />
-              <Route path="/modulo-3-playlist" element={<Module />} />
-              <Route path="/checkpoint-exame" element={<Exam />} />
+              <Route path="/introducao-e-conceitos-fundamentais" element={<Module />} />
+              <Route path="/planejamento-da-playlist" element={<Module />} />
+              <Route path="/compartilhamento-e-engajamento" element={<Module />} />
+              <Route path="/exame" element={<Exam />} />
             </Routes>
           </div>
         </section>

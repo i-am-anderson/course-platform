@@ -1,7 +1,7 @@
 # Plataforma de Curso
 
 ## Uso da IA
-1 - tipagem como "import modules from "@/src/configs/modules.json" with { type: "json" }", a IA ainda substituiu o 'with' por 'assert'
+1 - tipagem como "import modules from "@/src/data/cms/modules.json" with { type: "json" }", a IA ainda substituiu o 'with' por 'assert'
 ```json
 prompt: ...
 ```
@@ -10,6 +10,10 @@ prompt: ...
 prompt: ...
 ```
 3 - Ajuda na substituição do @import (deprecated) no SCSS para o @use
+```json
+prompt: ...
+```
+4 - Ajuda npara criar uma estrutura JSON como um mini CMS
 ```json
 prompt: ...
 ```
@@ -26,9 +30,14 @@ prompt: ...
 ## Escolha do Layout
 1 - Lembra o PowerPoint
 2 - Tem elementos padrão do mercado
-3 - Todos os links estão visiveis e o usuário tem feedback do processo
+3 - Todos os links estão visiveis e o usuário tem feedback de todas as estapas e links da página
+4 - Permite um minimo de acessibilidade, como expandir a tela de conteúdo 
 
 ## Escolhas na arquitetura
 - Uso mínimo de bibliotecas
 - Preferência em criação de hooks e de uso de componentes nativos
 - Flexibilidade de uso dos componentes (fácil intercambialidade)
+
+## O que poder ser feito
+- Acessibilidade (inversão de cores para daltonismo, aumento tamanho de fonte, ...)
+- Aria

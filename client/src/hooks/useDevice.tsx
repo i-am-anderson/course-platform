@@ -15,9 +15,9 @@ const useDevice = () => {
     };
   }, []);
 
-  const isMobile = width <= 425;
-  const isTablet = width > 425 && width <= 768;
-  const isDesktop = width > 768;
+  const isMobile = width <= 468;
+  const isTablet = width > 468 && width <= 991;
+  const isDesktop = width > 991;
 
   return { isMobile, isTablet, isDesktop };
 };

@@ -1,6 +1,12 @@
 import type { ImageProps } from "@/types/image"
 
-const Image = ({ small, medium, large, loading = undefined, alt = "" }: ImageProps) => {
+const Image = ({ url, loading = undefined, alt = "" }: ImageProps) => {
+  const cloudinary = import.meta.env.VITE_CLOUDINARY_URL;
+
+  const small = `${cloudinary}f_auto/q_auto/c_scale,w_300/${url}`;
+  const medium = `${cloudinary}f_auto/q_auto/c_scale,w_768/${url}`;
+  const large = `${cloudinary}f_auto/q_auto/c_scale,w_1280/${url}`;
+
   return (
     <img
       src={small}

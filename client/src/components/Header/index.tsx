@@ -1,20 +1,15 @@
 import { NavLink } from "react-router-dom";
-import { Menu } from "lucide-react";
 
-import useSidebarContext from "@/src/contexts/SidenavContext";
 import ToggleTheme from "@/src/components/ToggleTheme";
 
 import styles from "./styles.module.scss";
+import Hamburguer from "../Hamburguer";
 
 const Header = () => {
-    const { toggleSidenav } = useSidebarContext();
-
   return (
     <header className={`${styles.header} bg-1 border-color-1`}>
       <div>
-        <button onClick={toggleSidenav}>
-          <Menu className="icon-color-2" size={36} />
-        </button>
+        <Hamburguer />
       </div>
 
       <nav>

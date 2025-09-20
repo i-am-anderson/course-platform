@@ -22,9 +22,24 @@
 }
 
 html[data-theme="dark"] {
-  --color-1: #{$color-green};
-  --color-2: #{$color-gray};
-  --color-3: #{$color-blue};
+  --color--1: #{$color-green}; // Primária
+  --color--2: #{$color-blue}; // Secundária
+  --color--3: #{$color-gray}; // Destaque
+
+  --color--1-80: #{$color-green-80}; // 80%
+  --color--1-60: #{$color-green-60}; // 60%
+  --color--1-40: #{$color-green-40}; // 40%
+  --color--1-20: #{$color-green-20}; // 20%
+
+  --color--2-80: #{$color-blue-80}; // 80%
+  --color--2-60: #{$color-blue-60}; // 60%
+  --color--2-40: #{$color-blue-40}; // 40%
+  --color--2-20: #{$color-blue-20}; // 20%
+
+  --color--3-80: #{$color-gray-80}; // 80%
+  --color--3-60: #{$color-gray-60}; // 60%
+  --color--3-40: #{$color-gray-40}; // 40%
+  --color--3-20: #{$color-gray-20}; // 20%
 }
 
 *,
@@ -145,19 +160,48 @@ a[data-disabled="true"] {
   grid-template-columns: 0 1fr;
 }
 
+@media (max-width: $t) {
+  .section {
+    gap: 15px;
+    padding-right: 15px;
+  }
+}
+
 .container {
+  display: flex;
+  flex-direction: column;
   width: 100%;
+  max-width: 1920px;
   height: calc(100% - 80px);
-  overflow-y: auto;
-  margin: 40px 0 0;
+  overflow-y: hidden;
+  margin: 40px auto;
   background-color: var(--color--2);
   border: 1px solid var(--color--1-40);
   border-radius: 4px;
-  padding: 30px;
+  padding: 30px 10px 30px 30px;
 }
 
 @media (max-width: $t) {
   .container {
-    padding: 0 10px;
+    padding: 10px;
+    height: calc(100% - 30px);
+    margin: 15px auto;
   }
+}
+
+// Scrollbar
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color--3-40);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color--1);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color--1-80);
 }

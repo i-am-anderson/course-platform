@@ -1,7 +1,5 @@
 export type ImageProps = {
-  small: string;
-  medium: string;
-  large: string;
+  url: string;
   loading: "lazy" | "eager" | undefined;
   alt: string;
 };

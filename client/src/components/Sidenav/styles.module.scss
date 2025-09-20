@@ -1,8 +1,8 @@
 .sidenav {
   border-width: 1px;
   border-style: solid;
-  width: 100%;
   height: calc(100vh - 70px);
+  overflow-y: hidden;
   transition: 0.3s all;
 
   &[data-toggle="0"] {
@@ -12,16 +12,26 @@
 
   &[data-toggle="1"] {
     width: 300px;
-    padding: 15px;
+    padding: 15px 5px 15px 15px;
+  }
+
+  &__title {
+    font-size: 24px;
+    text-align: center;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
   }
 
   &__level-1 {
     overflow-y: auto;
-    height: 100%;
+    padding-right: 10px;
+    height: 85%;
+    padding-bottom: 20px;
   }
 
   &__level-2 {
-    margin-left: 10px;
     margin-bottom: 20px;
     padding-bottom: 10px;
     border-bottom-width: 1px;
@@ -29,13 +39,36 @@
   }
 
   &__module {
-    span {
+    &[data-active="true"] {
+      > a {
+        background-color: blue;
+      }
+    }
+    > a {
+      display: inline-block;
+      width: 100%;
+      padding: 10px;
       font-size: 18px;
       font-weight: 700;
+      &:hover {
+        background-color: red;
+      }
     }
   }
 
   &__topic {
-    padding: 10px;
+    &[data-active="true"] {
+      a {
+        background-color: blue;
+      }
+    }
+    a {
+      display: inline-block;
+      width: 100%;
+      padding: 10px;
+      &:hover {
+        background-color: red;
+      }
+    }
   }
 }
