@@ -1,0 +1,103 @@
+@use "../../styles/variables" as *;
+
+.sidenav {
+  border-width: 1px;
+  border-style: solid;
+  height: calc(100vh - 70px);
+  overflow-y: hidden;
+  transition: 0.3s all;
+
+  @media (max-width: $t) {
+    z-index: 1000;
+  }
+
+  &[data-toggle="0"] {
+    width: 0;
+    padding: 0;
+  }
+
+  &[data-toggle="1"] {
+    width: 300px;
+    padding: 15px 5px 15px 15px;
+  }
+
+  &__overlay {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 900;
+    background-color: transparent;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: 0.3s all;
+
+    &[data-toggle="1"] {
+      background-color: #333333;
+      opacity: 0.9;
+      visibility: visible;
+      pointer-events: all;
+    }
+  }
+
+  &__title {
+    font-size: 24px;
+    text-align: center;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+  }
+
+  &__level-1 {
+    overflow-y: auto;
+    padding-right: 10px;
+    height: 85%;
+    padding-bottom: 20px;
+  }
+
+  &__level-2 {
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+  }
+
+  &__module {
+    &[data-active="true"] {
+      > a {
+        border-width: 1px;
+        border-style: solid;
+        border-radius: 4px;
+      }
+    }
+    > a {
+      display: inline-block;
+      width: 100%;
+      padding: 10px;
+      font-size: 18px;
+      font-weight: 700;
+      &:hover {
+        opacity: 0.5;
+      }
+    }
+  }
+
+  &__topic {
+    &[data-active="true"] {
+      a {
+        border-width: 1px;
+        border-style: solid;
+        border-radius: 4px;
+      }
+    }
+    a {
+      display: inline-block;
+      width: 100%;
+      padding: 10px;
+      &:hover {
+        opacity: 0.5;
+      }
+    }
+  }
+}

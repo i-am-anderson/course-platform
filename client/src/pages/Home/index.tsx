@@ -1,9 +1,20 @@
-import React from 'react'
+import React, { useEffect } from "react";
+import styles from "./styles.module.scss";
+import useSidenavContext from "@/src/contexts/SidenavContext";
 
 const Home = () => {
-  return (
-    <div>Home</div>
-  )
-}
+  const { changePageId } = useSidenavContext();
 
-export default Home
+  useEffect(() => {
+    changePageId("home");
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  return (
+    <div className={`${styles.home}`}>
+      <h1>HOME</h1>
+    </div>
+  );
+};
+
+export default Home;

@@ -1,0 +1,11 @@
+@use "../../styles/variables" as *;
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 70px;
+  padding: 0 2%;
+  border-width: 1px;
+  border-style: solid;
+}

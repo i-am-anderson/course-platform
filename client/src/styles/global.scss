@@ -1,0 +1,269 @@
+@use "./variables" as *;
+
+:root {
+  --color--1: #{$color-blue}; // Primária
+  --color--2: #{$color-gray}; // Secundária
+  --color--3: #{$color-green}; // Destaque
+
+  --color--1-80: #{$color-blue-80}; // 80%
+  --color--1-60: #{$color-blue-60}; // 60%
+  --color--1-40: #{$color-blue-40}; // 40%
+  --color--1-20: #{$color-blue-20}; // 20%
+
+  --color--2-80: #{$color-gray-80}; // 80%
+  --color--2-60: #{$color-gray-60}; // 60%
+  --color--2-40: #{$color-gray-40}; // 40%
+  --color--2-20: #{$color-gray-20}; // 20%
+
+  --color--3-80: #{$color-green-80}; // 80%
+  --color--3-60: #{$color-green-60}; // 60%
+  --color--3-40: #{$color-green-40}; // 40%
+  --color--3-20: #{$color-green-20}; // 20%
+}
+
+html[data-theme="dark"] {
+  --color--1: #{$color-green}; // Primária
+  --color--2: #{$color-blue}; // Secundária
+  --color--3: #{$color-gray}; // Destaque
+
+  --color--1-80: #{$color-green-80}; // 80%
+  --color--1-60: #{$color-green-60}; // 60%
+  --color--1-40: #{$color-green-40}; // 40%
+  --color--1-20: #{$color-green-20}; // 20%
+
+  --color--2-80: #{$color-blue-80}; // 80%
+  --color--2-60: #{$color-blue-60}; // 60%
+  --color--2-40: #{$color-blue-40}; // 40%
+  --color--2-20: #{$color-blue-20}; // 20%
+
+  --color--3-80: #{$color-gray-80}; // 80%
+  --color--3-60: #{$color-gray-60}; // 60%
+  --color--3-40: #{$color-gray-40}; // 40%
+  --color--3-20: #{$color-gray-20}; // 20%
+}
+
+// Resets
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  font-family: sans-serif;
+  margin: 0;
+  background: var(--color--2-80);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+  border: none;
+  background: none;
+  outline: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+input,
+textarea,
+select {
+  color: inherit;
+}
+
+// Styles
+a[data-disabled="true"] {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.bg-1 {
+  background: var(--color--1);
+}
+
+.bg-2 {
+  background: var(--color--2);
+}
+
+.bg-3 {
+  background: var(--color--3);
+}
+
+.border-color-1 {
+  border-color: var(--color--1-40);
+}
+
+.border-color-2 {
+  border-color: var(--color--2-40);
+}
+
+.border-color-3 {
+  border-color: var(--color--3-40);
+}
+
+.icon-color-1 {
+  color: var(--color--1);
+}
+
+.icon-color-2 {
+  color: var(--color--2);
+}
+
+.icon-color-3 {
+  color: var(--color--3);
+}
+
+.section {
+  height: calc(100vh - 70px);
+  gap: 40px;
+  padding-right: 40px;
+  transition: 0.3s all;
+}
+
+.section[data-toggle="1"] {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+}
+
+.section[data-toggle="0"] {
+  display: grid;
+  grid-template-columns: 0 1fr;
+}
+
+@media (max-width: $t) {
+  .section {
+    gap: 15px;
+    padding-right: 15px;
+    position: relative;
+  }
+
+  .section[data-toggle="1"],
+  .section[data-toggle="0"] {
+    grid-template-columns: 1fr;
+  }
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 1920px;
+  height: calc(100% - 80px);
+  overflow-y: hidden;
+  margin: 40px auto;
+  background-color: var(--color--2);
+  border: 1px solid var(--color--1-40);
+  border-radius: 4px;
+  padding: 30px 10px 30px 30px;
+}
+
+@media (max-width: $t) {
+  .container {
+    position: absolute;
+    width: 94%;
+    left: 3%;
+    padding: 10px;
+    height: calc(100% - 30px);
+    margin: 15px auto;
+  }
+}
+
+a {
+  border-color: var(--color--3);
+}
+
+// Scrollbar
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color--3-40);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color--1);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color--1-80);
+}
+
+// Button, Input, Select
+button {
+  background: var(--color--1);
+  color: #fff;
+  padding: 10px 15px;
+  border-radius: 4px;
+  transition: 0.3s all;
+  &:hover {
+    background: var(--color--1-80);
+  }
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+  appearance: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--color--1);
+  border-radius: 4px;
+
+  &::before {
+    content: "";
+    display: block;
+    background-color: var(--color--1);
+    width: 12px;
+    height: 12px;
+    border-radius: 2px;
+    transform: scale(0);
+    transition: 0.3s all;
+  }
+
+  &:checked::before {
+    transform: scale(1);
+  }
+}
+
+select {
+  display: block;
+  background: var(--color--2);
+  border: 2px solid var(--color--1);
+  color: var(--color--1);
+  padding: 10px 15px;
+  border-radius: 4px;
+}
