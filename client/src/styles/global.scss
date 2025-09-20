@@ -164,7 +164,14 @@ a[data-disabled="true"] {
   .section {
     gap: 15px;
     padding-right: 15px;
+    position: relative;
   }
+
+  .section[data-toggle="1"],
+  .section[data-toggle="0"] {
+    grid-template-columns: 1fr;
+  }
+
 }
 
 .container {
@@ -183,6 +190,9 @@ a[data-disabled="true"] {
 
 @media (max-width: $t) {
   .container {
+    position: absolute;
+    width: 94%;
+    left: 3%;
     padding: 10px;
     height: calc(100% - 30px);
     margin: 15px auto;

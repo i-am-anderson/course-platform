@@ -4,13 +4,19 @@ import modules from "@/src/data/cms/modules.json" with { type: "json" }; // tipa
 
 import styles from "./styles.module.scss";
 import useSidenavContext from "@/src/contexts/SidenavContext";
+import useDevice from "@/src/hooks/useDevice";
 
 const Sidenav = () => {
-    const { sidenav, pageId } = useSidenavContext();
+  const { isDesktop } = useDevice();
+  const { sidenav, pageId, toggleSidenav } = useSidenavContext();
+
+  const handleClick = ()=>{
+    toggleSidenav()
+  }
 
   return (
+    <>
     <nav className={`${styles.sidenav} border-color-1 bg-2`} data-toggle={sidenav}>
-      PAGE ID: { pageId }
       <h1 className={`${styles.sidenav__title} border-color-1`}>Como criar uma playlist temática no Spotify</h1>
       <ul className={`${styles['sidenav__level-1']}`}>
         {modules.map(({ module, link, topics, id }) => (
@@ -38,6 +44,8 @@ const Sidenav = () => {
           </li>
       </ul>
     </nav>
+    {!isDesktop && <div className={styles.sidenav__overlay} data-toggle={sidenav} onClick={handleClick}></div>}
+    </>
   );
 };
 
