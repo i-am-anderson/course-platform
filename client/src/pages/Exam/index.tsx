@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import { useEffect, useState, type FormEvent } from "react";
 import useFetch from "@/src/hooks/useFetch";
 import type { DataProps } from "@/types/data";
@@ -94,19 +93,19 @@ const Exam = () => {
       answerIds.every((id) => template.includes(id))
     ) {
       // Só entra aqui se acertou a questão
-      setExam((prev: any) => {
-        const updatedQuestions = prev.questions.map((q: any) =>
-          q.question_id === count
-            ? {
-                ...q,
+      setExam((prev: ExamStorageProps) => {
+        const updatedQuestions = prev.questions.map((question_: ExamQuestionProps) =>
+          question_.question_id === count
+            ? ({
+                ...question_,
                 status: "completed",
-                remainingAttempts: q.remainingAttempts,
-              }
-            : q,
+                remainingAttempts: question_.remainingAttempts,
+              } as ExamQuestionProps)
+            : question_,
         );
 
         const examCompleted = updatedQuestions.every(
-          (q: any) => q.status === "completed",
+          (question_: ExamQuestionProps) => question_.status === "completed",
         );
 
         const totalScore = examCompleted
@@ -140,15 +139,15 @@ const Exam = () => {
     );
     if (question && question.remainingAttempts > 0) {
       // Só entra aqui se errou a questão
-      setExam((prev: any) => {
-        const updatedQuestions = prev.questions.map((q: any) =>
-          q.question_id === count
-            ? { ...q, remainingAttempts: q.remainingAttempts - 1 }
-            : q,
+      setExam((prev: ExamStorageProps) => {
+        const updatedQuestions = prev.questions.map((question_: ExamQuestionProps) =>
+          question_.question_id === count
+            ? { ...question_, remainingAttempts: question_.remainingAttempts - 1 }
+            : question_,
         );
 
         const examPending = updatedQuestions.every(
-          (q: any) => q.remainingAttempts > 0,
+          (q: ExamQuestionProps) => q.remainingAttempts > 0,
         );
 
         const updatedExam = {
