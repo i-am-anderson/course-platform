@@ -29,14 +29,14 @@ jobs:
 
       - name: 4. Build Docker image
         run: |
-          IMAGE=${{ secrets.DOCKERHUB_USERNAME }}/course-platform-server
+          IMAGE=${{ secrets.DOCKERHUB_USERNAME }}/course_platform_server
           SHA=${{ steps.vars.outputs.sha_short }}
 
           docker build -t $IMAGE:latest -t $IMAGE:$SHA ./src/server
 
       - name: 5. Push Docker image
         run: |
-          IMAGE=${{ secrets.DOCKERHUB_USERNAME }}/course-platform-server
+          IMAGE=${{ secrets.DOCKERHUB_USERNAME }}/course_platform_server
           SHA=${{ steps.vars.outputs.sha_short }}
 
           docker push $IMAGE:latest
