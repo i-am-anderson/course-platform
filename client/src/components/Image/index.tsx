@@ -1,4 +1,5 @@
-import type { ImageProps } from "@/types/image"
+import type { ImageProps } from "@/types/image";
+import placeholder from "/placeholder.png";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 
 const Image = ({ url, loading = undefined, alt = "", title }: ImageProps) => {
@@ -12,7 +13,9 @@ const Image = ({ url, loading = undefined, alt = "", title }: ImageProps) => {
     <LazyLoadImage
       src={small}
       srcSet={`${small} 500w, ${medium} 1000w, ${large} 1500w`}
-      sizes="(max-width: 600px) 480px, (max-width: 1200px) 800px, 1200px"
+      sizes="(max-width: 600px) 480px, (max-width: 1200px) 800px, 1280px"
+      placeholderSrc={placeholder}
+      effect="blur"
       loading={loading}
       alt={alt}
       title={title || alt}

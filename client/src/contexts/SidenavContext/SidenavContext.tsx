@@ -12,15 +12,15 @@ export const SidenavContextProvider = ({
   const localdddSidenav = localStorage.getItem(
     "sidenav",
   ) as SidenavProps | null;
-  const [sidenav, setdddSidenav] = useState<SidenavProps>(
+  const [sidenav, setSidenav] = useState<SidenavProps>(
     Number(localdddSidenav) === 0 ? 0 : Number(localdddSidenav) === 1 ? 1 : 1,
   );
   const [pageId, setPageId] = useState("");
 
   const toggleSidenav = (): void => {
-    const newdddSidenav = sidenav === 0 ? 1 : 0;
-    localStorage.setItem("sidenav", `${newdddSidenav}`);
-    setdddSidenav(newdddSidenav);
+    const newSidenav = sidenav === 0 ? 1 : 0;
+    localStorage.setItem("sidenav", `${newSidenav}`);
+    setSidenav(newSidenav);
   };
 
   const changePageId = (el: string): void => {

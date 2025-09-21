@@ -8,7 +8,7 @@ import Module from "./pages/Module";
 import useSidenavContext from "./contexts/SidenavContext";
 
 function App() {
-     const { sidenav } = useSidenavContext();
+  const { sidenav } = useSidenavContext();
 
   return (
     <BrowserRouter>
@@ -19,9 +19,13 @@ function App() {
           <div className="container">
             <Routes>
               <Route path="/" element={<Home />} />
-              <Route path="/introducao-e-conceitos-fundamentais" element={<Module />} />
+              <Route
+                path="/introducao-e-conceitos-fundamentais"
+                element={<Module />}
+              />
               <Route path="/planejamento-da-playlist" element={<Module />} />
               <Route path="/organizacao-e-estetica" element={<Module />} />
+              <Route path="/na-pratica" element={<Module />} />
               <Route path="/exame" element={<Exam />} />
             </Routes>
           </div>

@@ -1,4 +1,3 @@
-import React from "react";
 import type { FeedbackProps } from "@/types/exam";
 import styles from "../styles.module.scss";
 
@@ -14,14 +13,19 @@ const Feedback = ({ data, handleClick }: FeedbackProps) => {
         {data?.options
           .filter(({ is_correct }) => is_correct === 1)
           .map(({ text, id }) => (
-            <li className={styles.feedback__item} key={id}> - {text}</li>
+            <li className={styles.feedback__item} key={id}>
+              {" "}
+              - {text}
+            </li>
           ))}
       </ul>
 
       <h3 className={styles.feedback__title}>Por quê?</h3>
       <p className={styles.feedback__paragraph}>{data?.feedback}</p>
 
-      <button className={styles.feedback__button} onClick={handleClick}>Reiniciar teste</button>
+      <button className={styles.feedback__button} onClick={handleClick}>
+        Reiniciar teste
+      </button>
     </div>
   );
 };

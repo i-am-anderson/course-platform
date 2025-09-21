@@ -20,7 +20,7 @@ const Sidenav = () => {
         className={`${styles.sidenav} border-color-1 bg-2`}
         data-toggle={sidenav}
       >
-        <NavLink to="/">
+        <NavLink to="/" onClick={() => !isDesktop && handleClick()}>
           <h2 className={`${styles.sidenav__title} border-color-1`}>
             Como criar uma playlist temática no Spotify
           </h2>
@@ -33,7 +33,9 @@ const Sidenav = () => {
               key={link}
               data-active={pageId === id ? "true" : "false"}
             >
-              <NavLink to={link}>{module}</NavLink>
+              <NavLink to={link} onClick={() => !isDesktop && handleClick()}>
+                {module}
+              </NavLink>
 
               <ul className={`${styles["sidenav__level-2"]} border-color-1`}>
                 {topics.map(({ title, hash, id: id_ }) => (
@@ -42,7 +44,12 @@ const Sidenav = () => {
                     key={hash}
                     data-active={pageId === id_ ? "true" : "false"}
                   >
-                    <NavLink to={`${link}#/${hash}`}>{title}</NavLink>
+                    <NavLink
+                      to={`${link}#/${hash}`}
+                      onClick={() => !isDesktop && handleClick()}
+                    >
+                      {title}
+                    </NavLink>
                   </li>
                 ))}
               </ul>
@@ -50,14 +57,18 @@ const Sidenav = () => {
           ))}
 
           <li className={styles.sidenav__module}>
-            <NavLink to="/exame">Checkpoint - Exame</NavLink>
+            <NavLink to="/exame" onClick={() => !isDesktop && handleClick()}>
+              Checkpoint - Exame
+            </NavLink>
 
             <ul className={`${styles["sidenav__level-2"]} border-color-1`}>
               <li
                 className={styles.sidenav__topic}
                 data-active={pageId === "exame" ? "true" : "false"}
               >
-                <NavLink to="/exame">Exame</NavLink>
+                <NavLink to="/exame" onClick={() => !isDesktop && handleClick()}>
+                  Exame
+                </NavLink>
               </li>
             </ul>
           </li>
