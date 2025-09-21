@@ -1,4 +1,3 @@
-import React from "react";
 import type { ExamBoardProps } from "@/types/exam";
 
 import styles from "../styles.module.scss";
@@ -85,7 +84,10 @@ const ExamBoard = ({
           Verificar
         </button>
         {next && (
-          <button className={styles["examboard__form-next"]} onClick={handleClick}>
+          <button
+            className={styles["examboard__form-next"]}
+            onClick={handleClick}
+          >
             Próxima
           </button>
         )}

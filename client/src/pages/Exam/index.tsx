@@ -132,7 +132,7 @@ const Exam = () => {
         const updatedExam = {
           ...prev,
           status: examPending ? "pending" : "failed",
-          last_question: question.question_id, 
+          last_question: question.question_id,
           questions: updatedQuestions,
         };
 
@@ -151,7 +151,7 @@ const Exam = () => {
     setExam(examStorage);
     setNext(false);
     localStorage.setItem("exam", JSON.stringify(examStorage));
-    window.location.reload();
+    // window.location.reload();
   };
 
   useEffect(() => {
@@ -159,8 +159,15 @@ const Exam = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  if (loading) return <>Carregando...</>;
-  if (error) return <></>;
+  if (loading)
+    return <p className={`${styles.exam__loading}`}>Carregando...</p>;
+  if (error)
+    return (
+      <h3 className={`${styles.exam__error}`}>
+        Ops! Não conseguimos carregar os dados no momento. Tente novamente mais
+        tarde. <span>(API)</span>
+      </h3>
+    );
 
   if (exam.status === "completed") {
     return <Score exam={exam} handleClick={handleClick} />;

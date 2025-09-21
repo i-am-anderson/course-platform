@@ -1,13 +1,10 @@
 services:
   app:
-    build:
-      context: .
-      dockerfile: Dockerfile
     container_name: course_platform_server
+    image: anderzone/course_platform_server:latest
     ports:
       - "5000:5000"
     volumes:
-      - ./app:/usr/src/app
-      - ./app/database.sqlite:/usr/src/app/database.sqlite
+      - ./data/db.sqlite:/app/data/db.sqlite
     environment:
       NODE_ENV: development
