@@ -67,17 +67,10 @@ const Module = () => {
         {hash_ && (
           <div className={`${styles.module__body}`}>
             {/* Introdução ao Tópico */}
-            {data?.topics[0]?.coverImage && (
-              <Image
-                url={data?.topics[0].coverImage}
-                alt={data?.topics[0]?.title ?? ""}
-                loading="lazy"
-              />
-            )}
-            <h3 className={`${styles.module__sutitle}`}>
+            <h3 className={`${styles.module__subtitle}`}>
               {data?.topics[0]?.title}
             </h3>
-            <p className={`${styles.module__sutitle}`}>
+            <p className={`${styles.module__description}`}>
               {data?.topics[0]?.description}
             </p>
             <hr></hr>

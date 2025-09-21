@@ -1,0 +1,52 @@
+.exam {
+}
+
+.examboard {
+  &__form {
+    &-title {
+      margin-top: 20px;
+    }
+
+    &-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin: 20px 0;
+    }
+
+    &-item {
+      display: flex;
+      gap: 5px;
+    }
+
+    &-select {
+      margin: 20px 0;
+    }
+
+    &-submit {
+      margin-right: 20px;
+    }
+  }
+
+  &__notice {
+    display: inline-block;
+    margin-top: 20px;
+  }
+}
+
+.feedback {
+  &__title,
+  &__paragraph,
+  &__item,
+  &__button {
+    margin-top: 10px;
+  }
+}
+
+.score {
+  &__title,
+  &__score,
+  &__button {
+    margin-top: 20px;
+  }
+}

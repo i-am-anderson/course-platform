@@ -1,7 +1,7 @@
 import type { ImageProps } from "@/types/image"
 import { LazyLoadImage } from "react-lazy-load-image-component";
 
-const Image = ({ url, loading = undefined, alt = "" }: ImageProps) => {
+const Image = ({ url, loading = undefined, alt = "", title }: ImageProps) => {
   const cloudinary = import.meta.env.VITE_CLOUDINARY_URL;
 
   const small = `${cloudinary}f_auto/q_auto/c_scale,w_300/${url}`;
@@ -15,6 +15,7 @@ const Image = ({ url, loading = undefined, alt = "" }: ImageProps) => {
       sizes="(max-width: 600px) 480px, (max-width: 1200px) 800px, 1200px"
       loading={loading}
       alt={alt}
+      title={title || alt}
     />
   );
 };

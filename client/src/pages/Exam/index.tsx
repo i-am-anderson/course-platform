@@ -9,6 +9,7 @@ import type { ExamStorageProps, ExamQuestionProps } from "@/types/exam";
 import styles from "./styles.module.scss";
 import Feedback from "./components/Feedback";
 import ExamBoard from "./components/ExamBoard";
+import Score from "./components/Score";
 
 const Exam = () => {
   const url = import.meta.env.VITE_API_URL;
@@ -22,6 +23,7 @@ const Exam = () => {
     examLocaljson ? examLocaljson.last_question : examStorage.last_question,
   );
   const [notice, setNotice] = useState<string | null>(null);
+  const [next, setNext] = useState(false);
 
   const {
     loading,
@@ -90,7 +92,7 @@ const Exam = () => {
           ...prev,
           status: examCompleted ? "completed" : "pending",
           last_question:
-            count + 1 === prev.questions.length
+            count + 1 === exam.questions.length + 1
               ? prev.last_question
               : count + 1,
           score: totalScore,
@@ -102,12 +104,13 @@ const Exam = () => {
         return updatedExam;
       });
 
-      setCount(count + 1);
+      setNext(true);
+      setNotice("✅ Sua resposta está correta!");
       return;
     }
 
     const question = exam.questions.find(
-      (q: ExamQuestionProps) => q.question_id === count,
+      (question: ExamQuestionProps) => question.question_id === count,
     );
     if (question && question.remainingAttempts > 0) {
       // Só entra aqui se errou a questão
@@ -123,12 +126,13 @@ const Exam = () => {
         );
 
         const examPending = updatedQuestions.every(
-          (q: ExamQuestionProps) => q.remainingAttempts > 0,
+          (question: ExamQuestionProps) => question.remainingAttempts > 0,
         );
 
         const updatedExam = {
           ...prev,
           status: examPending ? "pending" : "failed",
+          last_question: question.question_id, 
           questions: updatedQuestions,
         };
 
@@ -137,7 +141,7 @@ const Exam = () => {
         return updatedExam;
       });
 
-      setNotice("Sua resposta está incorreta!");
+      setNotice("❌ Sua resposta está incorreta!");
     }
   };
 
@@ -145,6 +149,9 @@ const Exam = () => {
     setNotice(null);
     setCount(1);
     setExam(examStorage);
+    setNext(false);
+    localStorage.setItem("exam", JSON.stringify(examStorage));
+    window.location.reload();
   };
 
   useEffect(() => {
@@ -156,26 +163,28 @@ const Exam = () => {
   if (error) return <></>;
 
   if (exam.status === "completed") {
-    return (
-      <div>
-        <h1>Sua Pontuação:</h1>
-        <h3>{((exam.score / 9) * 100).toFixed(1)}%</h3>
-        <button onClick={handleClick}>Reiniciar teste</button>
-      </div>
-    );
+    return <Score exam={exam} handleClick={handleClick} />;
   }
 
   return (
     <div className={`${styles.exam}`}>
-      {exam.status === "pending" ? (
-        <ExamBoard
-          data={data}
-          notice={notice}
-          setNotice={setNotice}
-          handleSubmit={handleSubmit}
-        />
-      ) : (
-        <Feedback data={data} handleClick={handleClick} />
+      {(exam.status === "pending" || exam.status === "failed") && (
+        <>
+          <ExamBoard
+            data={data}
+            notice={notice}
+            setNotice={setNotice}
+            next={next}
+            setNext={setNext}
+            count={count}
+            setCount={setCount}
+            handleSubmit={handleSubmit}
+            examStatus={exam.status}
+          />
+          {exam.status === "failed" && (
+            <Feedback data={data} handleClick={handleClick} />
+          )}
+        </>
       )}
     </div>
   );

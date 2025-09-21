@@ -142,6 +142,11 @@ h3 {
   font-size: $font-size-xl;
 }
 
+small {
+  font-size: $font-size-xs;
+  color: var(--color--1-80);
+}
+
 a,
 p,
 li,
@@ -150,6 +155,14 @@ label {
   font-size: $font-size-md;
   color: var(--color--1);
   font-weight: $regular;
+}
+
+label {
+  cursor: pointer;
+}
+
+input:disabled + label {
+  pointer-events: none;
 }
 
 // Class Styles
@@ -275,6 +288,10 @@ button {
   &:hover {
     background: var(--color--1-80);
   }
+  &:disabled {
+    opacity: 0.5;
+    pointer-events: none;
+  }
 }
 
 input[type="radio"],
@@ -287,6 +304,12 @@ input[type="checkbox"] {
   height: 20px;
   border: 2px solid var(--color--1);
   border-radius: 4px;
+  cursor: pointer;
+
+  &:disabled {
+    opacity: 0.5;
+    pointer-events: none;
+  }
 
   &::before {
     content: "";
@@ -311,4 +334,9 @@ select {
   color: var(--color--1);
   padding: 10px 15px;
   border-radius: 4px;
+
+  &:disabled {
+    opacity: 0.5;
+    pointer-events: none;
+  }
 }

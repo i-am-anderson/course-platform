@@ -14,4 +14,7 @@
     flex-direction: column;
     gap: 15px;
   }
+  &__paragraph, &__description {
+    line-height: 150%;
+  }
 }

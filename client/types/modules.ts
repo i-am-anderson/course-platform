@@ -18,7 +18,6 @@ export interface TopicProps {
   title: string;
   hash: string;
   description: string;
-  coverImage: string;
   content: ContentBlockProps[];
 }
 
