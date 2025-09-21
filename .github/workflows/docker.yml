@@ -32,7 +32,7 @@ jobs:
           IMAGE=${{ secrets.DOCKERHUB_USERNAME }}/course_platform_server
           SHA=${{ steps.vars.outputs.sha_short }}
 
-          docker build -t $IMAGE:latest -t $IMAGE:$SHA ./src/server
+          docker build -t $IMAGE:latest -t $IMAGE:$SHA ./server
 
       - name: 5. Push Docker image
         run: |
