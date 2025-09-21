@@ -32,7 +32,7 @@ jobs:
           IMAGE=${{ secrets.DOCKERHUB_USERNAME }}/emby-webhook
           SHA=${{ steps.vars.outputs.sha_short }}
 
-          docker build -t $IMAGE:latest -t $IMAGE:$SHA .
+          docker build -t $IMAGE:latest -t $IMAGE:$SHA ./src/server
 
       - name: 5. Push Docker image
         run: |
