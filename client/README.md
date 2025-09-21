@@ -37,6 +37,7 @@ prompt: ...
 - Uso mínimo de bibliotecas
 - Preferência em criação de hooks e de uso de componentes nativos
 - Flexibilidade de uso dos componentes (fácil intercambialidade)
+- Imagens otimizadas com LazyLoad e com tamanhos dieferetens para cada dispositivo
 
 ## O que poder ser feito
 - Acessibilidade (inversão de cores para daltonismo, aumento tamanho de fonte, ...)

@@ -18,7 +18,6 @@ export interface TopicProps {
   title: string;
   hash: string;
   description: string;
-  coverImage: string;
   content: ContentBlockProps[];
 }
 
@@ -26,5 +25,7 @@ export interface ModuleProps {
   id: string;
   module: string;
   link: string;
+  description: string;
+  coverImage: string;
   topics: TopicProps[];
 }
