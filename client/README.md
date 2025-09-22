@@ -60,7 +60,9 @@ ou
 
 4. uso do <picture> e <source> na imagem, dividindo imagens por tamanhos vs. dispositivos;
 
-5. Flexibilidade de uso dos componentes (fácil intercambialidade);
+5. Flexibilidade de uso dos componentes; por exemplo, dividi alguns componentes em sub-componentes de forma que facilita movê-los ou reaproveitá-los, caso necessário;
+
+6. Optei por usar o hash na URL (ex.: #/o-que-e-uma-playlist-tematica) para diferenciar módulos e tópicos sem criar rotas adicionais, simplificando a estrutura da aplicação. Essa abordagem é útil em aplicações **puramente front-end e de teste** e **sem controle de servidor**, pois me permite controlar a navegação entre módulos e tópicos sem configurar novas rotas.
 
 7. Criação de uma estrutura JSON, simulando um CMS.
 
@@ -120,6 +122,6 @@ prompt: No PageSpeed estou perdendo ponto de tamanhos (bytes). Estou usando a Cl
 
 2. Não pesquisei alguma API que trouxesse perguntas e respostas sobre front end. No entanto criei uma bem simples do zero e fiz o deploy em uma VPS;  
 
-4. Como 'opcional' no final dos exercicios, na pontuação do usuário, coloquei um gráfico. Esse gráfico acabei descobrindo como fazer de modo bem simples (sem JS, puramente com SCSS) em um [Site](https://nikitahl.com/circle-progress-bar-css)
+3. Como 'opcional' no final dos exercicios, na pontuação do usuário, coloquei um gráfico. Esse gráfico acabei descobrindo como fazer de modo bem simples (sem JS, puramente com SCSS) em um [Site](https://nikitahl.com/circle-progress-bar-css)
 
-3. Testei no Google PageSpeed, quando estava usando a biblioteca (React Lazy Load Image Component); com a biblioteca as imagens não eram entregues otimizadas para cada dispositivo. No fim, tirei a biblioteca e usei as tags <pictures> e <source> combinadas com a tag <img> para entregar imagens com tamanhos diferentes para cada dispositivo.
+4. Testei no Google PageSpeed, quando estava usando a biblioteca (React Lazy Load Image Component); com a biblioteca as imagens não eram entregues otimizadas para cada dispositivo. No fim, tirei a biblioteca e usei as tags <pictures> e <source> combinadas com a tag <img> para entregar imagens com tamanhos diferentes para cada dispositivo.
