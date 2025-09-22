@@ -23,7 +23,7 @@ const ExamBoard = ({
     <div className={styles.examboard}>
       <h1 className={styles.examboard__title}>Exame</h1>
       <form onSubmit={handleSubmit} className={styles.examboard__form}>
-        <h2 className={styles["examboard__form-title"]}>{data?.question}</h2>
+        <p className={styles["examboard__form-title"]}>{data?.question}</p>
         <small className={styles["examboard__form-small"]}>
           {data?.type === "multiple"
             ? "* múltiplas respostas (3 tentativas)"
