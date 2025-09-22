@@ -46,14 +46,16 @@
     margin-bottom: 20px;
     border-bottom-width: 1px;
     border-bottom-style: solid;
+    font-size: $font-size-xxl;
 
-    a:hover{
+    a:hover {
       background-color: transparent;
     }
   }
 
   &__subtitle {
     margin-bottom: 10px;
+    font-size: $font-size-xl;
   }
 
   &__level-1 {
