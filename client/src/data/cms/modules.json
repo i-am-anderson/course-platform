@@ -1,204 +1,204 @@
 [
   {
-    "id": "xXEAA7",
+    "id": "hx97obktD9cV",
     "module": "Módulo 1 – Introdução e Conceitos Fundamentais",
     "link": "/introducao-e-conceitos-fundamentais",
     "description": "Neste módulo, você vai entender o que é uma playlist temática, como definir seu propósito e explorar os recursos básicos do Spotify para começar a criar suas próprias seleções musicais.",
     "coverImage": "/v1758483459/spotify-4334152_1280_zgza0q.jpg",
     "topics": [
       {
-        "id": "KvWH2m",
+        "id": "QIJKswrhjaQ3",
         "title": "1.1. O que é uma playlist temática?",
         "hash": "o-que-e-uma-playlist-tematica",
         "description": "Playlist criada em torno de uma ideia central (emoção, situação, gênero, personagem, estação do ano etc.). Diferencia-se das playlists aleatórias porque tem coesão e narrativa.",
         "content": [
           {
-            "id": "0470jK",
+            "id": "RdoHaKbIg2vL",
             "type": "paragraph",
             "text": "Uma playlist temática é uma coleção de músicas organizadas a partir de uma ideia central, capaz de transmitir uma atmosfera específica ou contar uma história por meio da sequência das faixas. Diferente de uma playlist aleatória, que mistura músicas sem um critério claro, a playlist temática tem coerência: cada canção escolhida reforça o tema proposto e contribui para a experiência do ouvinte. Essa coerência pode ser construída a partir de gêneros musicais, sentimentos, situações cotidianas ou até mesmo personagens e universos fictícios."
           },
           {
-            "id": "6jhOV5",
+            "id": "Oi4M34db9Bz3",
             "type": "image",
             "src": "/v1758483459/woman-977020_1280_kzwqeu.jpg",
-            "alt": "Imagem de uma pessoa ouvindo música com fones de ouvido enquanto estuda"
+            "alt": "Imagem de uma pessoa ouvindo música com fones de ouvido"
           },
           {
-            "id": "1234ab",
+            "id": "iTmObzxAc56u",
             "type": "paragraph",
             "text": "O grande diferencial está na intencionalidade. Uma playlist de treino, por exemplo, privilegia batidas aceleradas e músicas com energia alta para manter a motivação. Já uma playlist para relaxar pode ter sons suaves, ritmos lentos e faixas instrumentais. Em ambos os casos, o ouvinte percebe uma lógica que conecta todas as músicas, tornando a experiência mais envolvente. Essa curadoria cuidadosa transforma a playlist em muito mais do que um simples agrupamento de canções: ela vira uma trilha sonora para momentos específicos."
           },
           {
-            "id": "928eIw",
+            "id": "m0GQqEkD32BU",
             "type": "image",
             "src": "/v1758483454/concert-2527495_1280_ygh7p9.jpg",
-            "alt": "Imagem de amigos em uma festa com música ao fundo"
+            "alt": "Imagem de uma festa com música ao fundo"
           },
           {
-            "id": "934Dw31",
+            "id": "rFAoK0kF082u",
             "type": "paragraph",
             "text": "As playlists temáticas também podem funcionar como uma forma de expressão pessoal. Criar uma seleção de músicas que reflita emoções, fases da vida ou até lembranças permite compartilhar sentimentos com outras pessoas de maneira criativa. Além disso, esse tipo de playlist pode ser usada em contextos sociais, como festas ou eventos, ajudando a criar o clima desejado. É justamente essa mistura de propósito, emoção e identidade que torna a playlist temática uma ferramenta tão poderosa no universo musical."
           }
         ]
       },
       {
-        "id": "x3IOKh",
+        "id": "TvHsoKVu7AS0",
         "title": "1.2. Objetivo da playlist",
         "hash": "objetivo-da-playlist",
         "description": "Definir para que serve: animar uma festa, ajudar a estudar, motivar no treino, relaxar, ou até construir uma identidade (pessoal ou de marca).",
         "content": [
           {
-            "id": "Ek5OU8",
+            "id": "Gf8lf0ULZMmF",
             "type": "paragraph",
             "text": "O objetivo de uma playlist vai muito além de apenas reunir músicas favoritas. Cada seleção pode ser pensada para cumprir uma função específica no dia a dia das pessoas. Existem playlists criadas para dar energia em treinos, para ajudar na concentração durante os estudos, para embalar momentos de relaxamento ou até para criar o clima certo em uma festa. Esse direcionamento dá à playlist uma identidade clara, que guia as escolhas musicais."
           },
           {
-            "id": "23xKcg",
+            "id": "0gSDfspJ25KD",
             "type": "image",
             "src": "/v1758483455/fashion-1867392_1280_eiki09.jpg",
-            "alt": "Imagem de alguém correndo com fones de ouvido em um ambiente ao ar livre"
+            "alt": "Imagem de alguém com fones de ouvido em um ambiente ao ar livre"
           },
           {
-            "id": "8s0sa2",
+            "id": "pDCChYTuVMth",
             "type": "paragraph",
             "text": "Definir o objetivo é fundamental porque ele funciona como o “norte” da curadoria. Uma playlist voltada para estudo, por exemplo, dificilmente terá músicas agitadas ou com letras muito marcantes, pois podem distrair. Já uma playlist de festa pode apostar em hits populares, batidas dançantes e transições que mantêm a energia constante. Assim, a intenção por trás da playlist molda totalmente a experiência que será oferecida ao ouvinte."
           },
           {
-            "id": "sdD998",
+            "id": "gM87J9DplpgC",
             "type": "image",
             "src": "/v1758483455/mobile-phone-6170575_1280_u74phn.jpg",
-            "alt": "Imagem de uma pessoa em uma mesa de estudos com laptop e café, ouvindo música"
+            "alt": "Imagem de um telefone com fones de ouvido e um laptop em cima de uma mesa"
           },
           {
-            "id": "sDDas9",
+            "id": "5QpfI7PWZVia",
             "type": "paragraph",
             "text": "Além do uso pessoal, playlists também podem ter objetivos sociais ou de branding. Muitas marcas, influenciadores e criadores de conteúdo usam playlists para se conectar com o público, transmitindo valores e estilos de vida por meio da música. Nesse sentido, a playlist deixa de ser apenas uma ferramenta de entretenimento e passa a ser um recurso estratégico, capaz de gerar identificação e engajamento."
           },
           {
-            "id": "s8808S",
+            "id": "S5wfzujELtEq",
             "type": "image",
             "src": "/v1758483461/woman-5536316_1280_eyt2gp.jpg",
-            "alt": "Imagem de um grupo de amigos sorrindo e compartilhando música pelo celular"
+            "alt": "Imagem de uma pessoa com fones de ouvido"
           }
         ]
       },
       {
-        "id": "L71Lmc",
+        "id": "pTi69BrIelKT",
         "title": "1.3. Conhecendo o Spotify como ferramenta",
         "hash": "conhecendo-o-spotify-como-ferramenta",
         "description": "Explorar funções básicas: criar playlist, adicionar músicas, editar capa, descrição e ordem. Entender também as opções de compartilhamento e playlists colaborativas.",
         "content": [
           {
-            "id": "kaAUd7",
+            "id": "fSKI0L967RhA",
             "type": "paragraph",
             "text": "O Spotify é uma das plataformas de streaming de música mais populares do mundo e oferece diversos recursos que facilitam a criação e personalização de playlists. Além de reunir milhões de músicas e podcasts em um só lugar, a plataforma permite organizar seleções musicais de forma prática, seja pelo celular, computador ou até mesmo em dispositivos conectados, como smart speakers. Criar uma playlist no Spotify é simples: basta dar um nome, escolher uma capa e começar a adicionar as faixas desejadas."
           },
           {
-            "id": "5cqbb5",
+            "id": "EiJqHsVx1juA",
             "type": "image",
             "src": "/v1758483455/music-on-your-smartphone-1796117_1280_vg5rnh.jpg",
-            "alt": "Imagem de alguém navegando no aplicativo do Spotify no celular"
+            "alt": "Imagem de um tablet com fones de opuvido perto"
           },
           {
-            "id": "7sd9AS",
+            "id": "dg9GdzOkHJhV",
             "type": "paragraph",
             "text": "Outro ponto importante é a possibilidade de editar e ajustar as playlists sempre que necessário. É possível trocar a ordem das músicas, inserir novas faixas, remover as que já não fazem sentido para o tema e até alterar a capa ou descrição. Esse processo torna a playlist dinâmica, permitindo que ela evolua com o tempo ou seja atualizada para se manter atrativa. Dessa forma, a curadoria musical não fica engessada, e o criador pode moldar a experiência do ouvinte de acordo com suas intenções."
           },
           {
-            "id": "61AOP2",
+            "id": "W7v8vrx3s09L",
             "type": "paragraph",
             "text": "O Spotify também oferece recursos de compartilhamento e interação que ampliam o alcance das playlists. Além de publicar para que qualquer pessoa possa ouvir, é possível transformar a playlist em colaborativa, permitindo que amigos ou seguidores adicionem músicas. Essa função gera engajamento e dá um caráter mais coletivo à experiência musical. Quando usada de forma estratégica, a plataforma se torna não apenas um repositório de músicas, mas uma ferramenta de expressão, conexão e até mesmo branding."
           },
           {
-            "id": "cb2d11",
+            "id": "GTTlWKVPYpQr",
             "type": "image",
             "src": "/v1758483460/woman-3236059_1280_r1a7pj.jpg",
-            "alt": "Imagem de duas pessoas compartilhando um fone de ouvido e rindo juntas"
+            "alt": "Imagem de uma pessoa mexendo no celular"
           }
         ]
       }
     ]
   },
   {
-    "id": "fT52qS",
+    "id": "YLfhOblcGsIK",
     "module": "Módulo 2 – Planejamento da Playlist",
     "link": "/planejamento-da-playlist",
     "description": "Aqui você aprenderá a escolher um tema relevante, identificar o público-alvo, pesquisar músicas de forma estratégica e definir a duração e o equilíbrio ideais para sua playlist.",
     "coverImage": "/v1758483455/mockup-5219512_1280_aoj4kf.jpg",
     "topics": [
       {
-        "id": "TdfLCj",
+        "id": "vqXf503ScSC8",
         "title": "2.1. Definindo o tema e o público-alvo",
         "hash": "definindo-o-tema-e-o-publico-alvo",
         "description": "Escolher uma ideia central clara (ex: “Clássicos do Rock 80’s” ou “Músicas para concentrar”). Identificar quem vai ouvir e adaptar o tom, ritmo e repertório a esse público.",
         "content": [
           {
-            "id": "kaAUd7",
+            "id": "dGK1zB4c9DtH",
             "type": "paragraph",
             "text": "Toda playlist temática começa com uma boa definição de tema. Esse tema pode estar ligado a sentimentos, atividades, momentos do dia ou até estilos musicais. Quanto mais claro for o conceito, mais fácil será escolher as músicas certas para dar identidade à playlist. O tema funciona como um filtro criativo, que ajuda a manter coerência e evita que a seleção pareça aleatória."
           },
           {
-            "id": "5cqbb5",
+            "id": "vUG6STMC6PcD",
             "type": "image",
             "src": "/v1758483454/android-2618093_1280_t2tlvm.jpg",
-            "alt": "Imagem de alguém escrevendo ideias em um caderno com fones de ouvido ao lado"
+            "alt": "Imagem de alguém com um celular na mão na tela do Spotify"
           },
           {
-            "id": "fgs97ad",
+            "id": "cEfsp0AZ3YHf",
             "type": "paragraph",
             "text": "Pensar no público-alvo é outro passo essencial. Uma playlist feita para um grupo de amigos pode ter músicas com memórias compartilhadas, enquanto uma voltada para o público geral deve priorizar faixas mais universais ou populares. Saber para quem a playlist é criada orienta o tom, o ritmo e até a diversidade de estilos, já que cada grupo de ouvintes tem preferências e expectativas diferentes."
           }
         ]
       },
       {
-        "id": "S6rsqv",
+        "id": "zVFl13CmBACR",
         "title": "2.2. Pesquisa e seleção de músicas",
         "hash": "pesquisa-e-selecao-de-musicas",
         "description": "Usar recursos do Spotify (busca, artistas relacionados, rádios, playlists já existentes) e também redes sociais ou recomendações. Selecionar músicas que reforcem o tema e tragam diversidade.",
         "content": [
           {
-            "id": "jBi1xG",
+            "id": "tPclwl2Q6TRs",
             "type": "paragraph",
             "text": "A pesquisa é o coração da curadoria. O Spotify oferece diversos recursos que facilitam esse processo, como recomendações automáticas, rádios baseadas em artistas, playlists já existentes e a aba de descobertas. Além disso, explorar artistas relacionados e seguir tendências musicais ajuda a encontrar faixas que encaixam no tema, trazendo frescor e diversidade."
           },
           {
-            "id": "CiZDq5",
+            "id": "1HdeI2XlK35v",
             "type": "image",
             "src": "//v1758483455/music-on-your-smartphone-1796117_1280_vg5rnh.jpg",
-            "alt": "Imagem de uma tela de Spotify mostrando sugestões de músicas e artistas relacionados"
+            "alt": "Imagem de um tablet com fones de opuvido perto"
           },
           {
-            "id": "sss000",
+            "id": "AkbIiazgPibW",
             "type": "paragraph",
             "text": "Na hora da seleção, é importante definir critérios. Para uma playlist de relaxamento, por exemplo, priorizam-se músicas suaves, com poucos elementos marcantes. Para uma playlist de treino, batidas mais rápidas e letras motivadoras funcionam melhor. O segredo está em escolher músicas que não apenas agradem isoladamente, mas que também funcionem em conjunto, formando uma experiência sonora fluida."
           },
           {
-            "id": "SFD872x",
+            "id": "BhRA5TRWh38f",
             "type": "image",
             "src": "/v1758483455/mobile-phone-6170575_1280_u74phn.jpg",
-            "alt": "Imagem de alguém com fones grandes e concentrado em analisar músicas em um laptop"
+            "alt": "Imagem de um telefone com fones de ouvido e um laptop em cima de uma mesa"
           }
         ]
       },
       {
-        "id": "HBycLA",
+        "id": "DvV0lUviol1U",
         "title": "2.3. Duração e equilíbrio da playlist",
         "hash": "duracao-e-equilibrio-da-playlist",
         "description": "Evitar exageros: playlists muito curtas ou muito longas perdem impacto. Buscar equilíbrio entre músicas conhecidas e novidades para manter o interesse.",
         "content": [
           {
-            "id": "4oekrs",
+            "id": "wWiUQscFG4L0",
             "type": "paragraph",
             "text": "Uma boa playlist deve ter equilíbrio entre quantidade e qualidade. Playlists muito curtas podem parecer incompletas, enquanto as muito longas correm o risco de se tornarem cansativas. O ideal é ajustar o tamanho de acordo com o objetivo: uma playlist de treino pode ter 40 a 60 minutos, já uma de viagem pode se estender por algumas horas."
           },
           {
-            "id": "dYqays",
+            "id": "fZ4OgmFhx2Wk",
             "type": "image",
             "src": "/v1758483459/stopwatch-3205980_1280_w8hyd0.jpg",
-            "alt": "Imagem de alguém olhando para um cronômetro enquanto ouve música"
+            "alt": "Imagem de um cronográfo emcima de uma blusa com ziper"
           },
           {
-            "id": "4oekrs",
+            "id": "EfTI6g0ogsrR",
             "type": "paragraph",
             "text": "Uma boa playlist deve ter equilíbrio entre quantidade e qualidade. Playlists muito curtas podem parecer incompletas, enquanto as muito longas correm o risco de se tornarem cansativas. O ideal é ajustar o tamanho de acordo com o objetivo: uma playlist de treino pode ter 40 a 60 minutos, já uma de viagem pode se estender por algumas horas."
           }
@@ -207,132 +207,142 @@
     ]
   },
   {
-    "id": "4weDcxs",
+    "id": "UJwHaVLV8eXk",
     "module": "Módulo 3 – Na Prática",
     "link": "/na-pratica",
     "description": "Neste módulo, você vai aprender a criar a playlist e personaliza-la à sua maneira.",
     "coverImage": "/v1758483460/woman-3236059_1280_r1a7pj.jpg",
     "topics": [
       {
-        "id": "4rerAA",
+        "id": "Ye0I0LLJgw5q",
         "title": "3.1. Criando a Playlist",
         "hash": "criando-a-playlist",
         "description": "",
         "content": [
           {
-            "id": "Tws23V",
+            "id": "0J4VVcRTIh9W",
             "type": "paragraph",
-            "text": "No menu lateral clicar no botão '+' (Create a playlist, folder or Jam)."
+            "text": "1. No menu lateral clicar no botão '+' (Create a playlist, folder or Jam)."
           },
           {
-            "id": "44ssAp",
+            "id": "pDhHCS00c4XU",
             "type": "image",
             "src": "/v1758479219/Pasted_image_20250921140902_et6mhv.png",
-            "alt": ""
+            "alt": "Imagem do site do Spotify na tela inicial"
           },
           {
-            "id": "lOpmS1",
+            "id": "PPhflRwLv8Dg",
             "type": "paragraph",
-            "text": "Clique em Playlist (Create a playlist with songs or episodes)."
+            "text": "2. Clique em Playlist (Create a playlist with songs or episodes)."
           },
           {
-            "id": "4pMOam",
+            "id": "zk4LjJLJP3cW",
             "type": "image",
             "src": "/v1758479219/Pasted_image_20250921141004_wygttg.png",
-            "alt": ""
+            "alt": "Imagem do site do Spotify como memu de playlist aberto"
           },
           {
-            "id": "WwZzYy",
+            "id": "S2sUV7Uzw0VD",
             "type": "paragraph",
-            "text": "Uma nova Playlist será criada e estará disponivel para edição."
+            "text": "3. Uma nova Playlist será criada e estará disponivel para edição."
           },
           {
-            "id": "4mJklW",
+            "id": "fuFCmcr5FKhJ",
             "type": "image",
             "src": "/v1758479219/Pasted_image_20250921141132_n4blvs.png",
-            "alt": ""
+            "alt": "Imagem do site do Spotify na criação da playlist"
           }
         ]
       },
       {
-        "id": "45nsdA",
+        "id": "Gxuc5f7bHmK9",
         "title": "3.2. Editando a Playlist",
         "hash": "editando-a-playlist",
         "description": "",
         "content": [
           {
-            "id": "oLa891",
+            "id": "9ROpYSyAaYy0",
             "type": "paragraph",
-            "text": "Clicando sobre a capa da Playlist."
+            "text": "1. Clique sobre a capa da Playlist ('Choose photo', ao passar o mouse sobre)."
           },
           {
-            "id": "01023S",
+            "id": "Kzhtvl58OEug",
             "type": "image",
             "src": "/v1758479219/Pasted_image_20250921141248_qeu6nv.png",
-            "alt": ""
+            "alt": "Imagem do site do Spotify na criação da playlist com o hover sobre a imagem da capa"
           },
           {
-            "id": "pL12Ms",
+            "id": "TDUhsvJpVadC",
             "type": "paragraph",
-            "text": "Coloque uma foto de capa para sua Playlist , renomeie conforme desejado e escreva uma opcionalmente descrição (recomendamos ter descrição). Salve a edição."
+            "text": "2. Coloque uma foto de capa para sua Playlist , renomeie conforme desejado e escreva uma opcionalmente descrição (recomendamos ter descrição). Salve a edição."
           },
           {
-            "id": "1iOkl1",
+            "id": "qbtFkyXQ4YIf",
+            "type": "paragraph",
+            "text": "Obs.: Você pode usar o Canva para criar suas capas ou usar uma imagem do seu computador."
+          },
+          {
+            "id": "VulUv2PE12D0",
             "type": "image",
             "src": "/v1758479219/Pasted_image_20250921141625_bz2hb0.png",
-            "alt": ""
+            "alt": "Imagem do site do Spotify na edição da playlist"
           }
         ]
       },
       {
-        "id": "do234A",
+        "id": "q0vlMhx530hi",
         "title": "3.3. Inserindo Músicas na Playlist",
         "hash": "inserindo-musicas-na-playlist",
         "description": "",
         "content": [
           {
-            "id": "AnD134",
+            "id": "iWeEBhItTVQr",
             "type": "paragraph",
-            "text": "Role até a parte inferior da Playlist."
+            "text": "1. Role até a parte inferior da Playlist. Ali você vai encontrar o que seria a lista de músicas a ser exibidas assim que iniciarmos a pesquisa."
           },
           {
-            "id": "msi2DS",
+            "id": "2osIeUhsDvAi",
             "type": "image",
             "src": "/v1758479219/Pasted_image_20250921143545_gfh7ht.png",
-            "alt": ""
+            "alt": "Imagem do site do Spotify na parte de lista de músicas da playlist vazia"
           },
           {
-            "id": "S4nT05",
+            "id": "XQgwTdtMCk6A",
             "type": "paragraph",
-            "text": "Pesquise o pelo nome da música desejada ou artista/banda."
+            "text": "2. Pesquise o pelo nome da música desejada ou artista/banda."
           },
           {
-            "id": "wyzOPL1",
+            "id": "cgTdhkBUUwlu",
             "type": "image",
             "src": "/v1758479220/Pasted_image_20250921143659_t7sfpe.png",
-            "alt": ""
+            "alt": "Imagem do site do Spotify na lista de músicas pesquisada"
           },
           {
-            "id": "4r4Uj0",
+            "id": "PvWZ0sGK6EqE",
             "type": "paragraph",
-            "text": "Ao identificar a música desejada clique em 'Add'."
+            "text": "3. Ao retornar os resultados, você poderá identificar a música desejada. Ao encontrá-la, clique em 'Add'; a música será adicionada em sua Playlist."
           },
           {
-            "id": "mnjkl1",
+            "id": "QliamLpLGXbk",
             "type": "image",
             "src": "/v1758479220/Pasted_image_20250921143743_mvzmgn.png",
-            "alt": ""
+            "alt": "Imagem do site do Spotify na lista de músicas pesquisada e uma adicionada"
           },
           {
-            "id": "m4rnj0",
+            "id": "vOikQm3LzFCu",
             "type": "paragraph",
-            "text": "Pronto! Após fazer esse processo algumas vezes, você terá sua Playlist preenchida com as músicas selecionadas."
+            "text": "4. Pronto! Após fazer esse processo algumas vezes, você terá sua Playlist preenchida com todas as suas músicas desejadas."
           },
           {
-            "id": "8HaLxX",
+            "id": "7DW5rTpCPIZR",
             "type": "image",
             "src": "/v1758479221/Pasted_image_20250921143930_gpuokr.png",
-            "alt": ""
+            "alt": "Imagem do site do Spotify com três músicas adicionadas à playlist"
+          },
+          {
+            "id": "u0VxOfilaHLD",
+            "type": "paragraph",
+            "text": "Parabéns! Você terminou o curso de criação de playlist temática no Spotify. Avance para consolidar seu aprendizado, concluindo o exame no próximo módulo."
           }
         ]
       }

@@ -15,6 +15,7 @@ const Hamburguer = () => {
       className={styles.hamburguer}
       data-toggle={sidenav}
     >
+      Tema
       <span className={`${styles.hamburguer__first} bg-2 `}></span>
       <span className={`${styles.hamburguer__second} bg-2 `}></span>
       <span className={`${styles.hamburguer__third} bg-2 `}></span>
