@@ -125,3 +125,5 @@ prompt: No PageSpeed estou perdendo ponto de tamanhos (bytes). Estou usando a Cl
 3. Como 'opcional' no final dos exercicios, na pontuação do usuário, coloquei um gráfico. Esse gráfico acabei descobrindo como fazer de modo bem simples (sem JS, puramente com SCSS) em um [Site](https://nikitahl.com/circle-progress-bar-css)
 
 4. Testei no Google PageSpeed, quando estava usando a biblioteca (React Lazy Load Image Component); com a biblioteca as imagens não eram entregues otimizadas para cada dispositivo. No fim, tirei a biblioteca e usei as tags <pictures> e <source> combinadas com a tag <img> para entregar imagens com tamanhos diferentes para cada dispositivo.
+
+5. Alterei as fontes da aplicação para Roboto e Roboto Slab. Porém quando fiz a importação (tanto via SCSS quanto no index.html), no Google PageSpeed reduziu o 'Desempenho'de 97 para 91. Para tentar melhorar, baixei as fontes como '.woff2' na pasta public do projeto e crieei um arquivo de importação e configuração das fontes. Os arquivos foram baixados e suas configurações obtdias do [Site](https://gwfh.mranftl.com/fonts/roboto?subsets=latin).

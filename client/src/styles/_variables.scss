@@ -1,4 +1,4 @@
-// @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Roboto+Slab:wght@300;400;700&display=swap");
+@use "./fonts" as *;
 
 $color-blue: #1e3a8a; // Primária
 $color-gray: #d1d5db; // Secundária
@@ -36,4 +36,4 @@ $t: 991px; // Tablet
 $d: 1025px; // Desktop
 
 $main-font: "Roboto", Arial, Helvetica, sans-serif;
-$title-font: "Roboto Slab", 'Times New Roman', Times, serif ;
+$title-font: "Roboto Slab", "Times New Roman", Times, serif;
