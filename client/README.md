@@ -64,11 +64,19 @@ ou
 
 7. Criação de uma estrutura JSON, simulando um CMS.
 
-### O que eu poderia ter feito ainda
+### O que eu ainda poderia ter feito
 
-1. Aumentar a questaão da acessibilidade (inversão de cores para daltonismo, aumento tamanho de fonte, ...);
+(optei por não fazer para manter o projeto minimalista)
 
-2. Aplicar Aria Labels em alguns componentes.
+1. Aumentar a questão da acessibilidade (inversão de cores para daltonismo, aumento tamanho de fonte, ...);
+
+2. Aplicar Aria Labels em alguns componentes;
+
+3. Colocar botão no final do Módulo/Tópico para passar para o próximo;
+
+4. Gravar progresso dos Módulos/Tópicos asssistidos no Local Storage;
+
+5. Exibir para o usuário as tentativas restantes de cada pergunta.
 
 ---
 
