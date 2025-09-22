@@ -53,7 +53,7 @@ const Module = () => {
 
         {/* Módulos */}
         {!hash_ && (
-          <div>
+          <div className={`${styles.module__body}`}>
             <Image
               url={data?.coverImage}
               alt={data?.module ?? ""}
@@ -70,9 +70,6 @@ const Module = () => {
             <h3 className={`${styles.module__subtitle}`}>
               {data?.topics[0]?.title}
             </h3>
-            <p className={`${styles.module__description}`}>
-              {data?.topics[0]?.description}
-            </p>
             <hr></hr>
 
             {/* Conteúdo do Tópico */}

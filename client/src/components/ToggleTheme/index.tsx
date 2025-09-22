@@ -13,7 +13,7 @@ const ToggleTheme = () => {
           type="checkbox"
           id="toggle-theme"
           onChange={toggleTheme}
-          checked={theme === "light"}
+          checked={theme === "dark"}
           className={styles.toggletheme__input}
         />
         <span className={`${styles.toggletheme__cta} bg-2`}>{theme}</span>

@@ -1,4 +1,5 @@
 # Plataforma de Curso
+[Front-End](https://course-platform-mocha.vercel.app/)
 
 ## Uso da IA
 1 - tipagem como "import modules from "@/src/data/cms/modules.json" with { type: "json" }", a IA ainda substituiu o 'with' por 'assert'
@@ -34,10 +35,11 @@ prompt: ...
 4 - Permite um minimo de acessibilidade, como expandir a tela de conteúdo 
 
 ## Escolhas na arquitetura
-- Uso mínimo de bibliotecas
-- Preferência em criação de hooks e de uso de componentes nativos
+- Uso mínimo de bibliotecas (usei apenas bibioteca de ícones e o lazy load para imagens)
+- Preferência em criação de hooks e de uso de componentes nativos (detecção de dispositivos, tratamento de requisição)
 - Flexibilidade de uso dos componentes (fácil intercambialidade)
 - Imagens otimizadas com LazyLoad e com tamanhos dieferetens para cada dispositivo
+- Criação de uma estrutura JSON, simulando um CMS
 
 ## O que poder ser feito
 - Acessibilidade (inversão de cores para daltonismo, aumento tamanho de fonte, ...)

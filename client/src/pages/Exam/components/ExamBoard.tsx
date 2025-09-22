@@ -26,8 +26,8 @@ const ExamBoard = ({
         <h2 className={styles["examboard__form-title"]}>{data?.question}</h2>
         <small className={styles["examboard__form-small"]}>
           {data?.type === "multiple"
-            ? "* múltiplas respostas"
-            : "* resposta única"}
+            ? "* múltiplas respostas (3 tentativas)"
+            : "* resposta única (3 tentativas)"}
         </small>
 
         {data?.type === "multiple" ||

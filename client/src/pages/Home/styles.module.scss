@@ -1,7 +1,7 @@
 .home {
   flex: 1;
   overflow-y: auto;
-  padding-right: 10px;
+  padding-right: 30px;
 
   &__head {
     margin-bottom: 30px;
@@ -9,7 +9,7 @@
   &__body {
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 30px;
   }
   &__paragraph {
     margin-bottom: 10px;

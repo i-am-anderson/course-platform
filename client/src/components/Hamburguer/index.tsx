@@ -12,7 +12,7 @@ const Hamburguer = () => {
     <button
       onClick={handleClick}
       className={styles.hamburguer}
-      data-click={sidenav}
+      data-toggle={sidenav}
     >
       <span className={`${styles.hamburguer__first} bg-2 `}></span>
       <span className={`${styles.hamburguer__second} bg-2 `}></span>

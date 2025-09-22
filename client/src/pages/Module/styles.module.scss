@@ -1,7 +1,7 @@
 .module {
   flex: 1;
   overflow-y: auto;
-  padding-right: 10px;
+  padding-right: 30px;
 
   &__wrapper {
     margin-bottom: 20px;
@@ -9,10 +9,13 @@
   &__head {
     margin-bottom: 30px;
   }
+  &__title {
+    display: inline-block;
+  }
   &__body {
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 30px;
   }
   &__paragraph, &__description {
     line-height: 150%;

@@ -6,8 +6,10 @@ import type {ThemeContextProps, ThemeProps} from "@/types/theme"
 export const ThemeContext = createContext<ThemeContextProps | null>(null);
 
 export const ThemeContextProvider = ({ children }: { children: ReactNode }) => {
-  const localTheme = localStorage.getItem("theme") as ThemeProps | null;
-  const [theme, setTheme] = useState<ThemeProps>(localTheme || "light");
+  const localTheme = localStorage.getItem("theme");
+  const isDark = localTheme === "dark" ? "dark" : "light";
+
+  const [theme, setTheme] = useState<ThemeProps>(isDark);
 
   const toggleTheme = (): void => {
     const newTheme = theme === "light" ? "dark" : "light";
@@ -15,8 +17,9 @@ export const ThemeContextProvider = ({ children }: { children: ReactNode }) => {
     setTheme(newTheme);
   };
 
+  // Poderia ter pego o tema do sistema operacional do usuário
   useEffect(() => {
-    document.documentElement.setAttribute("data-theme", theme === 'dark' ? 'light' : 'dark');
+    document.documentElement.setAttribute("data-theme", theme === 'dark' ? 'dark' : 'light');
   }, [theme]);
 
   return (
