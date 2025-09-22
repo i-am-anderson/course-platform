@@ -36,11 +36,11 @@ const Sidenav = () => {
               key={link}
               data-active={pageId === id ? "true" : "false"}
             >
-              <h3 className={`${styles.sidenav__subtitle}`}>
+              <h2 className={`${styles.sidenav__subtitle}`}>
                 <NavLink to={link} onClick={() => !isDesktop && handleClick()}>
                   {module}
                 </NavLink>
-              </h3>
+              </h2>
               <ul className={`${styles["sidenav__level-2"]} border-color-1`}>
                 {topics.map(({ title, hash, id: id_ }) => (
                   <li
@@ -62,11 +62,11 @@ const Sidenav = () => {
 
           {/* Exame */}
           <li className={styles.sidenav__module}>
-            <h3 className={`${styles.sidenav__subtitle}`}>
+            <h2 className={`${styles.sidenav__subtitle}`}>
               <NavLink to="/exame" onClick={() => !isDesktop && handleClick()}>
                 Checkpoint - Exame
               </NavLink>
-            </h3>
+            </h2>
 
             <ul className={`${styles["sidenav__level-2"]} border-color-1`}>
               <li
