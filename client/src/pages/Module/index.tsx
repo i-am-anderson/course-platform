@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useLocation } from "react-router";
 import type { ModuleProps } from "@/types/modules";
 import styles from "./styles.module.scss";
@@ -10,27 +10,43 @@ const Module = () => {
   const { pathname, hash: hash_ } = useLocation();
   const { changePageId } = useSidenavContext();
   const [data, setData] = useState<ModuleProps | null>(null);
+  const scrollRef = useRef<HTMLDivElement>(null);
+
+  // Função que rola a página para o topo (hash)
+  const scrollToTop = () => {
+    if (scrollRef.current) {
+      scrollRef.current.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  };
 
   useEffect(() => {
+    scrollToTop();
+
+    // Filtra a o caminho da URL
     const selectedData = modules.filter(
       ({ link }) => link === pathname,
     ) as ModuleProps[];
 
+    // Se não existir dados reseta os estados
     if (selectedData.length === 0) {
       setData(null);
       changePageId("");
       return;
     }
 
+    // Verifica o hash da página (renderiza Tópico)
     if (hash_) {
+      // Retorna os dados de acordo com o hash da página
       const selectedTopic = selectedData[0]?.topics.filter(
         ({ hash }: { hash: string }) => hash === hash_.replace("#/", ""),
       );
 
+      // Se não encontrar os dados do Tópico, retorna o Módulo
       if (selectedTopic.length === 0) {
         setData(selectedData[0]);
         changePageId(selectedData[0].id);
       } else {
+        // Se encontrar os dados do Tópico, coloca no estado
         setData({ ...selectedData[0], topics: selectedTopic });
         changePageId(selectedTopic[0].id);
       }
@@ -38,6 +54,7 @@ const Module = () => {
       return;
     }
 
+    // Renderiza Módulo (não tem hash)
     setData(selectedData[0]);
     changePageId(selectedData[0].id);
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -45,7 +62,7 @@ const Module = () => {
 
   if (data === null) return <></>;
   return (
-    <div className={`${styles.module}`}>
+    <div className={`${styles.module}`} ref={scrollRef}>
       <div className={`${styles.module__wrapper}`}>
         <div className={`${styles.module__head}`}>
           <h1 className={`${styles.module__title}`}>{data?.module}</h1>

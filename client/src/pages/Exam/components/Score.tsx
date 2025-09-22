@@ -8,6 +8,7 @@ type Props = {
 };
 
 const Score = ({ exam, handleClick }: Props) => {
+  // Cálculo da pontuação
   const score = ((exam.score / 9) * 100).toFixed(0);
 
   return (

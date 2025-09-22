@@ -25,6 +25,7 @@ const Exam = () => {
   const [notice, setNotice] = useState<string | null>(null);
   const [next, setNext] = useState(false);
 
+  // Hook para requisição com controller.abort() e feedback
   const {
     loading,
     error,
@@ -38,12 +39,14 @@ const Exam = () => {
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
+    // Array de inputs ou options (select)
     const inputs = Array.from(
       event.currentTarget.querySelectorAll<
         HTMLInputElement | HTMLSelectElement
       >('input[name="options"]:checked, select[name="options"]'),
-    ); // Ajuste de tipagem por IA
+    );
 
+    // Retorno quando o usuário não seleciona alguma alternativa
     if (inputs.length === 0) {
       setNotice("É necessário selecionar pelo menos uma alternativa!");
       return;
@@ -57,16 +60,20 @@ const Exam = () => {
       else return +input.value;
     });
 
+    // Monta um array de números como gabarito para a questão, quais a(s) alternativas correta(s)
     const template = data?.options
       .filter(({ is_correct }) => is_correct === 1)
       .map(({ id }) => +id);
 
+    // Verifica se a quantidade de alternativas selecionadas pelo usuário corresponde à quantidade correta
+    // Verifica as respostas do usuário no template (todas precisam corresponder)
     if (
       template?.length === answerIds.length &&
       answerIds.every((id) => template.includes(id))
     ) {
-      // Só entra aqui se acertou a questão
+      // Só entra aqui se acertou a questão...
       setExam((prev: ExamStorageProps) => {
+        // Muda o status da pergunta e as tentativas usadas
         const updatedQuestions = prev.questions.map(
           (question_: ExamQuestionProps) =>
             question_.question_id === count
@@ -78,16 +85,21 @@ const Exam = () => {
               : question_,
         );
 
+        // Verifica se todas as questões estão completas
         const examCompleted = updatedQuestions.every(
           (question_: ExamQuestionProps) => question_.status === "completed",
         );
 
+        // Calcula a pontuação do usuário
         const totalScore = examCompleted
           ? updatedQuestions
               .map((item: ExamQuestionProps) => item.remainingAttempts)
               .reduce((a: number, b: number) => a + b, 0)
           : 0;
 
+        // Atualiza o objeto para se o exame está completo, qual foi a última questão respondida do usuário (importante
+        // para saber qual pergunta voltar, caso o usuário saia da página), sua pontuação e insere os dados das perguntas
+        // atualizadas anteriormente
         const updatedExam = {
           ...prev,
           status: examCompleted ? "completed" : "pending",
@@ -99,12 +111,16 @@ const Exam = () => {
           questions: updatedQuestions,
         };
 
+        // Atualiza o local storage
         localStorage.setItem("exam", JSON.stringify(updatedExam));
 
         return updatedExam;
       });
 
+      // Ativa o botão de próxima pergunta
       setNext(true);
+
+      // Aviso de resposta correta
       setNotice("✅ Sua resposta está correta!");
       return;
     }
@@ -115,6 +131,7 @@ const Exam = () => {
     if (question && question.remainingAttempts > 0) {
       // Só entra aqui se errou a questão
       setExam((prev: ExamStorageProps) => {
+        // Muda o tentativas usadas
         const updatedQuestions = prev.questions.map(
           (question_: ExamQuestionProps) =>
             question_.question_id === count
@@ -125,10 +142,13 @@ const Exam = () => {
               : question_,
         );
 
+        // Verifica se o usuário ainda tem tentativas restantes
         const examPending = updatedQuestions.every(
           (question: ExamQuestionProps) => question.remainingAttempts > 0,
         );
 
+        // Atualiza o objeto para se o exame está pendente ou se falhou, qual foi a última questão respondida do usuário
+        // insere os dados das perguntas atualizadas anteriormente
         const updatedExam = {
           ...prev,
           status: examPending ? "pending" : "failed",
@@ -136,16 +156,19 @@ const Exam = () => {
           questions: updatedQuestions,
         };
 
+        // Atualiza o local storage
         localStorage.setItem("exam", JSON.stringify(updatedExam));
 
         return updatedExam;
       });
 
+      // Aviso de resposta incorreta
       setNotice("❌ Sua resposta está incorreta!");
     }
   };
 
   const handleClick = () => {
+    // Reseta os estados e coloca o valor padrão no local storage
     setNotice(null);
     setCount(1);
     setExam(examStorage);
@@ -158,8 +181,11 @@ const Exam = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  // Se a requisição ainda estiver sendo feita...
   if (loading)
     return <p className={`${styles.exam__loading}`}>Carregando...</p>;
+
+  // Se deu erro na requisição, por exemplo 500...
   if (error)
     return (
       <h3 className={`${styles.exam__error}`}>
@@ -168,10 +194,12 @@ const Exam = () => {
       </h3>
     );
 
+  // Se o usuário completou o exame mostra a pontuação
   if (exam.status === "completed") {
     return <Score exam={exam} handleClick={handleClick} />;
   }
 
+  // Se o usuário ainda estiver preenchendo o exame ou se tiver errado alguma questão 3 vezes
   return (
     <div className={`${styles.exam}`}>
       {(exam.status === "pending" || exam.status === "failed") && (
@@ -187,6 +215,8 @@ const Exam = () => {
             handleSubmit={handleSubmit}
             examStatus={exam.status}
           />
+
+          {/* Mostra se o usuário tiver errado alguma questão 3 vezes */}
           {exam.status === "failed" && (
             <Feedback data={data} handleClick={handleClick} />
           )}
