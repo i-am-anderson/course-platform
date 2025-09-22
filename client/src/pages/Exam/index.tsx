@@ -151,7 +151,6 @@ const Exam = () => {
     setExam(examStorage);
     setNext(false);
     localStorage.setItem("exam", JSON.stringify(examStorage));
-    // window.location.reload();
   };
 
   useEffect(() => {

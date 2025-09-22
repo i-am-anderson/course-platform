@@ -1,7 +1,13 @@
+@use "../../styles/variables" as *;
+
 .home {
   flex: 1;
   overflow-y: auto;
-  padding-right: 10px;
+  padding-right: 30px;
+
+  @media (max-width: $t) {
+    padding-right: 15px;
+  }
 
   &__head {
     margin-bottom: 30px;
@@ -9,9 +15,26 @@
   &__body {
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 30px;
   }
+
   &__paragraph {
     margin-bottom: 10px;
+  }
+
+  &__title, &__subtitle {
+    display: inline-block;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  &__item {
+    &::before {
+      content: " - ";
+    }
   }
 }

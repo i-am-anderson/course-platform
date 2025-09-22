@@ -11,6 +11,7 @@ function App() {
   const { sidenav } = useSidenavContext();
 
   return (
+    // Roteamento
     <BrowserRouter>
       <main>
         <Header />

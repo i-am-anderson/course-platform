@@ -11,12 +11,12 @@
     z-index: 1000;
   }
 
-  &[data-toggle="0"] {
+  &[data-toggle="false"] {
     width: 0;
     padding: 0;
   }
 
-  &[data-toggle="1"] {
+  &[data-toggle="true"] {
     width: 300px;
     padding: 15px 5px 15px 15px;
   }
@@ -32,7 +32,7 @@
     pointer-events: none;
     transition: 0.3s all;
 
-    &[data-toggle="1"] {
+    &[data-toggle="true"] {
       background-color: #333333;
       opacity: 0.9;
       visibility: visible;

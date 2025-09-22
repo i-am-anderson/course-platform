@@ -82,6 +82,10 @@ svg {
   height: auto;
 }
 
+img {
+  margin: 0 auto;
+}
+
 picture,
 video,
 canvas,
@@ -218,25 +222,25 @@ input:disabled + label {
   transition: 0.3s all;
 }
 
-.section[data-toggle="1"] {
+.section[data-toggle="true"] {
   display: grid;
   grid-template-columns: 300px 1fr;
 }
 
-.section[data-toggle="0"] {
+.section[data-toggle="false"] {
   display: grid;
   grid-template-columns: 0 1fr;
 }
 
 @media (max-width: $t) {
   .section {
-    gap: 15px;
+    gap: 30px;
     padding-right: 15px;
     position: relative;
   }
 
-  .section[data-toggle="1"],
-  .section[data-toggle="0"] {
+  .section[data-toggle="true"],
+  .section[data-toggle="false"] {
     grid-template-columns: 1fr;
   }
 }
@@ -245,7 +249,7 @@ input:disabled + label {
   display: flex;
   flex-direction: column;
   width: 100%;
-  max-width: 1920px;
+  max-width: 1500px;
   height: calc(100% - 80px);
   overflow-y: hidden;
   margin: 40px auto;
@@ -260,7 +264,7 @@ input:disabled + label {
     position: absolute;
     width: 94%;
     left: 3%;
-    padding: 10px;
+    padding: 15px;
     height: calc(100% - 30px);
     margin: 15px auto;
   }
