@@ -57,7 +57,7 @@ body {
 }
 
 body {
-  font-family: sans-serif;
+  font-family: $main-font;
   margin: 0;
   background: var(--color--2-80);
 }
@@ -117,7 +117,9 @@ select {
 
 // Tag Styles
 a {
+  display: inline-block;
   color: var(--color--1);
+  border-radius: 4px;
 
   [data-disabled="true"] {
     opacity: 0.5;
@@ -125,14 +127,16 @@ a {
   }
   &:hover {
     text-shadow: 1px 0 0 currentColor;
-    color: var(--color--3);
+    background-color: var(--color--3-60);
+    color: var(--color--1);
   }
 }
 
 [data-active="true"] {
   > a {
     text-shadow: 1px 0 0 currentColor;
-    color: var(--color--3);
+    background-color: var(--color--3-60);
+    color: var(--color--1);
   }
 }
 
@@ -141,6 +145,7 @@ h2,
 h3 {
   color: var(--color--1);
   font-weight: $bold;
+  font-family: $title-font;
 }
 
 h1 {
@@ -165,8 +170,14 @@ p,
 li,
 span,
 label {
-  font-size: $font-size-md;
   color: var(--color--1);
+}
+
+p,
+li,
+span,
+label {
+  font-size: $font-size-lg;
   font-weight: $regular;
 }
 
@@ -294,7 +305,7 @@ a {
 // Button, Input, Select
 button {
   background: var(--color--1);
-  color: #fff;
+  color: var(--color--2);
   padding: 10px 15px;
   border-radius: 4px;
   transition: 0.3s all;

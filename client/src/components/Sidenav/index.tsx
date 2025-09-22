@@ -22,11 +22,11 @@ const Sidenav = () => {
         data-toggle={sidenav}
       >
         {/* Topo da Sidenav */}
-        <NavLink to="/" onClick={() => !isDesktop && handleClick()}>
-          <h2 className={`${styles.sidenav__title} border-color-1`}>
+        <h1 className={`${styles.sidenav__title} border-color-1`}>
+          <NavLink to="/" onClick={() => !isDesktop && handleClick()}>
             Como criar uma playlist temática no Spotify
-          </h2>
-        </NavLink>
+          </NavLink>
+        </h1>
 
         {/* Lista de Módulos e Tópicos */}
         <ul className={`${styles["sidenav__level-1"]}`}>
@@ -36,10 +36,11 @@ const Sidenav = () => {
               key={link}
               data-active={pageId === id ? "true" : "false"}
             >
-              <NavLink to={link} onClick={() => !isDesktop && handleClick()}>
-                {module}
-              </NavLink>
-
+              <h3 className={`${styles.sidenav__subtitle}`}>
+                <NavLink to={link} onClick={() => !isDesktop && handleClick()}>
+                  {module}
+                </NavLink>
+              </h3>
               <ul className={`${styles["sidenav__level-2"]} border-color-1`}>
                 {topics.map(({ title, hash, id: id_ }) => (
                   <li
@@ -61,9 +62,11 @@ const Sidenav = () => {
 
           {/* Exame */}
           <li className={styles.sidenav__module}>
-            <NavLink to="/exame" onClick={() => !isDesktop && handleClick()}>
-              Checkpoint - Exame
-            </NavLink>
+            <h3 className={`${styles.sidenav__subtitle}`}>
+              <NavLink to="/exame" onClick={() => !isDesktop && handleClick()}>
+                Checkpoint - Exame
+              </NavLink>
+            </h3>
 
             <ul className={`${styles["sidenav__level-2"]} border-color-1`}>
               <li

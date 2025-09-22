@@ -33,8 +33,8 @@
     transition: 0.3s all;
 
     &[data-toggle="true"] {
-      background-color: #333333;
-      opacity: 0.9;
+      background-color: $color-green;
+      opacity: 0.7;
       visibility: visible;
       pointer-events: all;
     }
@@ -46,6 +46,14 @@
     margin-bottom: 20px;
     border-bottom-width: 1px;
     border-bottom-style: solid;
+
+    a:hover{
+      background-color: transparent;
+    }
+  }
+
+  &__subtitle {
+    margin-bottom: 10px;
   }
 
   &__level-1 {
