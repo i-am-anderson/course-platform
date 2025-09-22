@@ -1,6 +1,8 @@
 @use "../../styles/variables" as *;
 
 .exam {
+  background-color: transparent;
+
   &__error {
     span {
       font-size: $font-size-xs;

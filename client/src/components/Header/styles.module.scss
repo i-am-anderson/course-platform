@@ -8,4 +8,9 @@
   padding: 0 2%;
   border-width: 1px;
   border-style: solid;
+
+  &__left,
+  &__right {
+    background-color: transparent;
+  }
 }

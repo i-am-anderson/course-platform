@@ -1,21 +1,23 @@
+import { LazyLoadImage } from "react-lazy-load-image-component";
 import type { ImageProps } from "@/types/image";
 import placeholder from "/placeholder.png";
-import { LazyLoadImage } from "react-lazy-load-image-component";
 
-const Image = ({ url, loading = undefined, alt = "", title }: ImageProps) => {
+const Image = ({ url, loading = undefined, fetchpriority = "high", alt = "", title }: ImageProps) => {
   const cloudinary = import.meta.env.VITE_CLOUDINARY_URL;
 
-  const small = `${cloudinary}f_auto/q_auto/c_scale,w_300/${url}`;
-  const medium = `${cloudinary}f_auto/q_auto/c_scale,w_768/${url}`;
+  // Padrões de imagem via Cloudinary
+  const small = `${cloudinary}f_auto/q_auto/c_scale,w_480/${url}`;
+  const medium = `${cloudinary}f_auto/q_auto/c_scale,w_991/${url}`;
   const large = `${cloudinary}f_auto/q_auto/c_scale,w_1280/${url}`;
 
   return (
     <LazyLoadImage
       src={small}
-      srcSet={`${small} 500w, ${medium} 1000w, ${large} 1500w`}
-      sizes="(max-width: 600px) 480px, (max-width: 1200px) 800px, 1280px"
+      srcSet={`${small} 480w, ${medium} 991w, ${large} 1280w`}
+      sizes="(max-width: 480px) 100vw, (max-width: 991px) 100vw, 1280px"
       placeholderSrc={placeholder}
       effect="blur"
+      fetchPriority={fetchpriority} 
       loading={loading}
       alt={alt}
       title={title || alt}

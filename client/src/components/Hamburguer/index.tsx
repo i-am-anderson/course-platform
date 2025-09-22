@@ -9,6 +9,7 @@ const Hamburguer = () => {
   };
 
   return (
+    // handleClick aciona um estado global via contexto
     <button
       onClick={handleClick}
       className={styles.hamburguer}

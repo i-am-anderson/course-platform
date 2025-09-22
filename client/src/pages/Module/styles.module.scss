@@ -1,7 +1,13 @@
+@use "../../styles//variables" as *;
+
 .module {
   flex: 1;
   overflow-y: auto;
   padding-right: 30px;
+
+  @media (max-width: $t) {
+    padding-right: 15px;
+  }
 
   &__wrapper {
     margin-bottom: 20px;
@@ -17,7 +23,8 @@
     flex-direction: column;
     gap: 30px;
   }
-  &__paragraph, &__description {
+  &__paragraph,
+  &__description {
     line-height: 150%;
   }
 }

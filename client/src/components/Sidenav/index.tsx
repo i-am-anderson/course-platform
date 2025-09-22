@@ -10,6 +10,7 @@ const Sidenav = () => {
   const { isDesktop } = useDevice();
   const { sidenav, pageId, toggleSidenav } = useSidenavContext();
 
+  // handleClick aciona um estado global via contexto
   const handleClick = () => {
     toggleSidenav();
   };
@@ -20,12 +21,14 @@ const Sidenav = () => {
         className={`${styles.sidenav} border-color-1 bg-2`}
         data-toggle={sidenav}
       >
+        {/* Topo da Sidenav */}
         <NavLink to="/" onClick={() => !isDesktop && handleClick()}>
           <h2 className={`${styles.sidenav__title} border-color-1`}>
             Como criar uma playlist temática no Spotify
           </h2>
         </NavLink>
 
+        {/* Lista de Módulos e Tópicos */}
         <ul className={`${styles["sidenav__level-1"]}`}>
           {modules.map(({ module, link, topics, id }) => (
             <li
@@ -56,6 +59,7 @@ const Sidenav = () => {
             </li>
           ))}
 
+          {/* Exame */}
           <li className={styles.sidenav__module}>
             <NavLink to="/exame" onClick={() => !isDesktop && handleClick()}>
               Checkpoint - Exame
@@ -66,7 +70,10 @@ const Sidenav = () => {
                 className={styles.sidenav__topic}
                 data-active={pageId === "exame" ? "true" : "false"}
               >
-                <NavLink to="/exame" onClick={() => !isDesktop && handleClick()}>
+                <NavLink
+                  to="/exame"
+                  onClick={() => !isDesktop && handleClick()}
+                >
                   Exame
                 </NavLink>
               </li>
@@ -74,6 +81,8 @@ const Sidenav = () => {
           </li>
         </ul>
       </nav>
+
+      {/* Overlay - Apenas em dispositivos móveis */}
       {!isDesktop && (
         <div
           className={styles.sidenav__overlay}

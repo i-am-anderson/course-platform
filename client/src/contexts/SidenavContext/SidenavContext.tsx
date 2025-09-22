@@ -9,18 +9,21 @@ export const SidenavContextProvider = ({
 }: {
   children: ReactNode;
 }) => {
+  // Verifica se o valor salvo no localStorage e se é "false"
   const localSidenav = localStorage.getItem("sidenav");
   const isFalse = localSidenav === "false";
 
   const [sidenav, setSidenav] = useState<boolean>(!isFalse);
   const [pageId, setPageId] = useState("");
 
+  // Função para alternar o estado do sidenav e salvar no localStorage
   const toggleSidenav = (): void => {
     const newSidenav = !sidenav;
     localStorage.setItem("sidenav", `${newSidenav}`);
     setSidenav(newSidenav);
   };
 
+  // Função para alterar o pageId (usado para destacar qual item está ativo no Sidenav)
   const changePageId = (el: string): void => {
     setPageId(el);
   };
