@@ -1,7 +1,9 @@
 @use "../../styles/variables" as *;
 
 .combobox {
+  position: relative;
   width: 200px;
+  height: 45px;
   margin: 20px 0;
 
   &__display {
@@ -10,10 +12,34 @@
     background: var(--color--2);
     border: 2px solid var(--color--1);
     color: var(--color--1);
-    padding: 10px 15px;
+    padding: 10px 30px 10px 15px;
     border-radius: 4px;
     width: 100%;
     margin-bottom: 5px;
+    text-wrap: nowrap;
+    overflow-x: hidden;
+    text-overflow: ellipsis;
+    cursor: pointer;
+
+    svg {
+      position: absolute;
+      top: 10px;
+      right: 5px;
+      width: 20px;
+      height: 20px;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='lucide lucide-chevron-down-icon lucide-chevron-down'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+      transition: 0.3s all;
+    }
+
+    &[data-open="true"] {
+      svg {
+        transform: rotate(180deg);
+        transition: 0.3s all;
+      }
+    }
   }
 
   &__menu {
@@ -21,17 +47,17 @@
     width: 200px;
     position: absolute;
     overflow-y: hidden;
-    transition: 0.3s all;
     background-color: var(--color--2);
+    border: 2px solid transparent;
+    border-radius: 4px;
+    z-index: 100;
+    transition: 0.3s all;
 
-    &--open {
+    &[data-open="true"] {
       height: 200px;
       width: 200px;
-      position: absolute;
-      overflow-y: auto;
       border: 2px solid var(--color--1);
-      border-radius: 4px;
-      background-color: var(--color--2);
+      overflow-y: auto;
       transition: 0.3s all;
     }
   }
@@ -51,18 +77,33 @@
   }
 
   &__item {
-    &:hover {
-      background-color: var(--color--3-40);
-    }
+    display: inline;
   }
 
   &__label {
     display: inline-block;
     padding: 7px;
     width: 100%;
+
+    &:hover {
+      background-color: var(--color--3-40);
+    }
   }
 
   &__input {
     display: none !important;
+
+    &:disabled {
+      pointer-events: none;
+
+      + .combobox__label {
+        pointer-events: none;
+        opacity: 0.5;
+
+        &:hover {
+          background-color: transparent;
+        }
+      }
+    }
   }
 }

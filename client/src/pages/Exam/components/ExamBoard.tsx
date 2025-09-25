@@ -55,7 +55,7 @@ const ExamBoard = ({
             ))}
           </ul>
         ) : (
-          data?.options && <Combobox name="combobox" options={data?.options} />
+          data?.options && <Combobox name="combobox" options={data?.options} setNotice={setNotice} disabled={next || examStatus === "failed"} />
         )}
 
         <button
