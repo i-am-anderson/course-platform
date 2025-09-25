@@ -1,0 +1,68 @@
+@use "../../styles/variables" as *;
+
+.combobox {
+  width: 200px;
+  margin: 20px 0;
+
+  &__display {
+    position: relative;
+    display: block;
+    background: var(--color--2);
+    border: 2px solid var(--color--1);
+    color: var(--color--1);
+    padding: 10px 15px;
+    border-radius: 4px;
+    width: 100%;
+    margin-bottom: 5px;
+  }
+
+  &__menu {
+    height: 0;
+    width: 200px;
+    position: absolute;
+    overflow-y: hidden;
+    transition: 0.3s all;
+    background-color: var(--color--2);
+
+    &--open {
+      height: 200px;
+      width: 200px;
+      position: absolute;
+      overflow-y: auto;
+      border: 2px solid var(--color--1);
+      border-radius: 4px;
+      background-color: var(--color--2);
+      transition: 0.3s all;
+    }
+  }
+  &__search {
+    display: block;
+    background: var(--color--2);
+    border: 2px solid var(--color--1);
+    color: var(--color--1);
+    padding: 10px 15px;
+    border-radius: 4px;
+    width: 95%;
+    margin: 5px;
+
+    &::placeholder {
+      color: var(--color--1-60);
+    }
+  }
+
+  &__item {
+    &:hover {
+      background-color: var(--color--3-40);
+    }
+  }
+
+  &__label {
+    display: inline-block;
+    padding: 7px;
+    width: 100%;
+  }
+
+  &__input {
+    display: none !important;
+  }
+}

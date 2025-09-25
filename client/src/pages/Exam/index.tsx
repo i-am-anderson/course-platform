@@ -43,7 +43,7 @@ const Exam = () => {
     const inputs = Array.from(
       event.currentTarget.querySelectorAll<
         HTMLInputElement | HTMLSelectElement
-      >('input[name="options"]:checked, select[name="options"]'),
+      >('input[name="options"]:checked, select[name="options"], input[data-input="combobox"]'),
     );
 
     // Retorno quando o usuário não seleciona alguma alternativa
@@ -54,8 +54,8 @@ const Exam = () => {
 
     // Type Guard
     const answerIds = inputs.map((input) => {
-      // Se for radio ou checkbox
-      if (input instanceof HTMLInputElement) return +input.id;
+      // Se for radio ou checkbox e não é combobox
+      if (input instanceof HTMLInputElement && input.dataset?.input !== "combobox") return +input.id;
       // Se for select
       else return +input.value;
     });
