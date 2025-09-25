@@ -2,6 +2,7 @@
 
 .exam {
   background-color: transparent;
+  overflow-y: auto;
 
   &__error {
     span {
