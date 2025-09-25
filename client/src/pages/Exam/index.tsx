@@ -43,10 +43,12 @@ const Exam = () => {
     const inputs = Array.from(
       event.currentTarget.querySelectorAll<
         HTMLInputElement | HTMLSelectElement
-      >('input[name="options"]:checked, select[name="options"]'),
+      >(
+        'input[name="options"]:checked, select[name="options"], input[data-input="combobox"]',
+      ),
     );
 
-    // Retorno quando o usuário não seleciona alguma alternativa
+    // Retorno quando o usuário não seleciona alguma alternativa (select/options/checkbox)
     if (inputs.length === 0) {
       setNotice("É necessário selecionar pelo menos uma alternativa!");
       return;
@@ -54,11 +56,21 @@ const Exam = () => {
 
     // Type Guard
     const answerIds = inputs.map((input) => {
-      // Se for radio ou checkbox
-      if (input instanceof HTMLInputElement) return +input.id;
+      // Se for radio ou checkbox e não é combobox
+      if (
+        input instanceof HTMLInputElement &&
+        input.dataset?.input !== "combobox"
+      )
+        return +input.id;
       // Se for select
       else return +input.value;
     });
+
+    // Retorno quando o usuário não seleciona alguma alternativa (combobox)
+    if (answerIds[0] === -1) {
+      setNotice("É necessário selecionar pelo menos uma alternativa!");
+      return;
+    }
 
     // Monta um array de números como gabarito para a questão, quais a(s) alternativas correta(s)
     const template = data?.options

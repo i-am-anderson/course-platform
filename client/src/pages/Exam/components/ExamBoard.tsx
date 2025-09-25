@@ -1,6 +1,7 @@
 import type { ExamBoardProps } from "@/types/exam";
 
 import styles from "../styles.module.scss";
+import Combobox from "@/src/components/Combobox";
 
 const ExamBoard = ({
   data,
@@ -54,26 +55,7 @@ const ExamBoard = ({
             ))}
           </ul>
         ) : (
-          <select
-            className={styles["examboard__form-select"]}
-            name="options"
-            id="options"
-            onChange={() => setNotice(null)}
-            disabled={next || examStatus === "failed"}
-          >
-            <option className={styles["examboard__form-option"]} disabled>
-              Selecione uma resposta
-            </option>
-            {data?.options.map(({ id, text }) => (
-              <option
-                className={styles["examboard__form-option"]}
-                value={id}
-                key={id}
-              >
-                {text}
-              </option>
-            ))}
-          </select>
+          data?.options && <Combobox name="combobox" options={data?.options} setNotice={setNotice} disabled={next || examStatus === "failed"} />
         )}
 
         <button
