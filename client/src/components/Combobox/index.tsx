@@ -11,9 +11,9 @@ type Props = {
 };
 
 type SelectPtops = {
-  text: string
-  id: number
-}
+  text: string;
+  id: number;
+};
 
 const Combobox = ({ name, options, setNotice, disabled }: Props) => {
   const ref = useRef<HTMLDivElement>(null);
@@ -103,7 +103,7 @@ const Combobox = ({ name, options, setNotice, disabled }: Props) => {
         />
 
         {/* Lista */}
-        <ul>
+        <ul className={`${styles.combobox__list}`}>
           {handle.map(({ id, text }) => (
             <li className={styles.combobox__item} data-value={id} key={id}>
               <input
@@ -119,6 +119,7 @@ const Combobox = ({ name, options, setNotice, disabled }: Props) => {
               <label
                 htmlFor={name + id.toString()}
                 className={styles.combobox__label}
+                data-selected={Number(id) === Number(select.id)}
               >
                 {text}
               </label>
