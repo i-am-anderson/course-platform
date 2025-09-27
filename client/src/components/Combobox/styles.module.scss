@@ -45,8 +45,8 @@
   &__menu {
     height: 0;
     width: 200px;
-    position: absolute;
-    overflow-y: hidden;
+    position: relative;
+    overflow: hidden;
     background-color: var(--color--2);
     border: 2px solid transparent;
     border-radius: 4px;
@@ -54,14 +54,24 @@
     transition: 0.3s all;
 
     &[data-open="true"] {
-      height: 200px;
+      height: 150px;
       width: 200px;
       border: 2px solid var(--color--1);
-      overflow-y: auto;
+      overflow: hidden;
       transition: 0.3s all;
     }
   }
+
+  &__list {
+    height: calc(100% - 76px);
+    overflow-y: auto;
+    margin-top: 60px;
+  }
+
   &__search {
+    position: absolute;
+    top: 0;
+    left: 0;
     display: block;
     background: var(--color--2);
     border: 2px solid var(--color--1);
@@ -85,6 +95,7 @@
     padding: 7px;
     width: 100%;
 
+    &[data-selected="true"],
     &:hover {
       background-color: var(--color--3-40);
     }
